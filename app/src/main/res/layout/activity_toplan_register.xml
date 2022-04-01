@@ -160,7 +160,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/phone"
+                    android:text="@string/cellphone"
                     android:textColor="@color/orange"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp" />
@@ -169,7 +169,7 @@
                     android:id="@+id/edtPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_phone"
+                    android:hint="@string/hint_cellphone"
                     android:inputType="phone"
                     android:textSize="16sp"
                     android:padding="10dp"

@@ -12,7 +12,7 @@
     <string name="rg">RG</string>
     <string name="cpf">CPF</string>
     <string name="email">E-mail</string>
-    <string name="phone">Telefone</string>
+    <string name="cellphone">Celular</string>
     <string name="password">Senha</string>
     <string name="password_confirmation">Confirmação de senha</string>
     <string name="finish">Finalizar</string>
@@ -23,6 +23,6 @@
     <string name="hint_rg">__.___.___-_</string>
     <string name="hint_cpf">___.___.___-__</string>
     <string name="hint_email">email@email.com</string>
-    <string name="hint_phone">(99) 9999-9999</string>
+    <string name="hint_cellphone">(99) 99999-9999</string>
     <string name="hint_password">********</string>
 </resources>
