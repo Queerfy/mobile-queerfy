@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Queerfy</string>
+    <string name="need_rent">Precisa alugar com urgência?</string>
+    <string name="rent_level">Qual o seu nível de <font color='#F15356'>urgência</font>?</string>
+    <string name="urgency">Urgente</string>
+    <string name="plan">Planejar</string>
+    <string name="register">Registre-se</string>
+    <string name="name">Nome</string>
+    <string name="since_date">Data de nascimento</string>
+    <string name="gender_identity">Identidade de gênero</string>
+    <string name="sexual_orientation">Orientação sexual</string>
+    <string name="rg">RG</string>
+    <string name="cpf">CPF</string>
+    <string name="email">E-mail</string>
+    <string name="phone">Telefone</string>
+    <string name="password">Senha</string>
+    <string name="password_confirmation">Confirmação de senha</string>
+    <string name="finish">Finalizar</string>
+    <string name="hint_name">Nome completo</string>
+    <string name="hint_since_date">__/__/____</string>
+    <string name="hint_gender_identity">Selecionar</string>
+    <string name="hint_sexual_orientation">Lésbica</string>
+    <string name="hint_rg">__.___.___-_</string>
+    <string name="hint_cpf">___.___.___-__</string>
+    <string name="hint_email">email@email.com</string>
+    <string name="hint_phone">(99) 9999-9999</string>
+    <string name="hint_password">********</string>
+</resources>

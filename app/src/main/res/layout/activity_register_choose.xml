@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    tools:context=".view.RegisterChooseActivity">
+
+    <TextView
+        android:id="@+id/txtText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/need_rent"
+        android:textColor="@color/red"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rent_level"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/border_dark" />
+
+    <Button
+        android:id="@+id/btnUrgency"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:drawableBottom="@drawable/ic_alert"
+        android:text="@string/urgency"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/shape_register_button"
+        android:backgroundTint="@color/red"
+        android:padding="10dp"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/btnPlan"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:drawableBottom="@drawable/ic_sunset"
+        android:text="@string/plan"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/shape_register_button"
+        android:backgroundTint="@color/orange"
+        android:padding="10dp"
+        android:layout_marginTop="40dp" />
+
+</LinearLayout>
