@@ -210,22 +210,23 @@
                     android:textSize="16sp"
                     android:padding="10dp"
                     android:background="@drawable/shape_register_edit_text" />
-            </LinearLayout>
 
-            <Button
-                android:id="@+id/btnFinish"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/finish"
-                android:background="@drawable/shape_register_button"
-                android:backgroundTint="@color/orange"
-                android:layout_marginTop="40dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                app:layout_constraintTop_toBottomOf="@id/containerFields"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:textColor="@color/white"/>
+                <Button
+                    android:id="@+id/btnFinish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finish"
+                    android:background="@drawable/shape_register_button"
+                    android:backgroundTint="@color/orange"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="40dp"
+                    app:layout_constraintTop_toBottomOf="@id/containerFields"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
