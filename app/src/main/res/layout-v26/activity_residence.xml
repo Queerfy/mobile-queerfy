@@ -92,8 +92,7 @@
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/description_title"
-                    tools:targetApi="o" />
+                    app:layout_constraintTop_toBottomOf="@id/description_title" />
 
                 <TextView
                     android:id="@+id/description_details"
@@ -199,8 +198,7 @@
                         android:inputType="date"
                         android:paddingHorizontal="10dp"
                         android:textSize="13sp"
-                        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck"
-                        tools:targetApi="m" />
+                        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
                     <EditText
                         style="@style/dateEditText"
@@ -212,8 +210,7 @@
                         android:inputType="date"
                         android:paddingHorizontal="10dp"
                         android:textSize="13sp"
-                        tools:ignore="TextContrastCheck"
-                        tools:targetApi="m" />
+                        tools:ignore="TextContrastCheck" />
 
                     <Button
                         android:layout_width="wrap_content"
@@ -270,8 +267,7 @@
                     app:drawableStartCompat="@drawable/ic_kitchen"
                     app:drawableTint="@color/black"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/wifi_characteristic"
-                    tools:targetApi="m" />
+                    app:layout_constraintTop_toBottomOf="@id/wifi_characteristic" />
 
                 <TextView
                     android:id="@+id/pets_characteristic"

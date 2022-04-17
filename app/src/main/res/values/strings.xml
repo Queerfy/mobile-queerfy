@@ -23,12 +23,12 @@
     <string name="hint_rg">__.___.___-_</string>
     <string name="hint_cpf">___.___.___-__</string>
     <string name="hint_email">email@email.com</string>
-    <string name="hint_cellphone">(99) 99999-9999</string>
+    <string name="hint_cellphone">(99) 99999–9999</string>
     <string name="hint_password">********</string>
     <string name="residence_photo">Residence photo</string>
     <string name="residence_title">Casa - 1 quarto disponível</string>
     <string name="residence_location">SP - Alphaville</string>
-    <string name="bot_o_de_favoritar">Botão de favoritar</string>
+    <string name="favorite_button">Favoritar residência</string>
     <string name="description_title">Descrição</string>
     <string name="description_text">Quarto confortável, ambiente harmônico e agradável. Localizado no bairro de Alphaville em São Paulo.</string>
     <string name="description_details">4 hóspedes - 1 quarto - 3 camas - 1 banheiro</string>
@@ -38,4 +38,12 @@
     <string name="booking_total_price_label">Total:</string>
     <string name="booking_check_in_label">Check-in</string>
     <string name="date_edit_text_hint">dd/mm/aaaa</string>
+    <string name="booking_button">Pronto</string>
+    <string name="characteristics_title">Caracteristicas</string>
+    <string name="wifi_characteristic">Wi-Fi</string>
+    <string name="kitchen_characteristic">Cozinha</string>
+    <string name="pets_characteristic">Animais</string>
+    <string name="characteristics_host_for">Hospedado por</string>
+    <string name="characteristics_host_name">Henri Rael</string>
+    <string name="characteristics_host_photo">Foto do host</string>
 </resources>
