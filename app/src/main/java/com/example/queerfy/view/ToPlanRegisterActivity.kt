@@ -15,6 +15,7 @@ import java.lang.ref.WeakReference
 
 class ToPlanRegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityToplanRegisterBinding
+    private val toPlanRegisterViewModel = ToPlanRegisterViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,12 +82,16 @@ class ToPlanRegisterActivity : AppCompatActivity() {
     private fun setupListeners() {
         this.binding.btnFinish.setOnClickListener {
             // TODO Validar campos
-            //if (validateFields()) {
-            //seturgencyRegisterModel()
-            //urgencyRegisterViewModel.putIntoBd()
-            //} else {
-                // TODO Mostrar que tem algo errado e dar foco
-            //}
+            if (validateFields()) {
+                seturgencyRegisterModel()
+                toPlanRegisterViewModel.toPlanRegisterModel?.let { it1 ->
+                    toPlanRegisterViewModel.putIntoBd(
+                        it1, this
+                    )
+                }
+            } else {
+                 // TODO Mostrar que tem algo errado e dar foco
+            }
         }
     }
 
@@ -95,27 +100,29 @@ class ToPlanRegisterActivity : AppCompatActivity() {
         return true
     }
 
-    // private fun seturgencyRegisterModel() {
-    // toPlanRegisterViewModel.toPlanRegisterModel =
-    // toPlanRegisterViewModel(
-    // name = this.binding.edtName.text.toString(),
-    // sinceDate = this.binding.edtSinceDate.text.toString()
-    // .replace("/","")
-    // .replace(" ","")
-    // .trim(),
-    // sexOrientation =  toPlanRegisterViewModel.sexOrientationEnum,
-    // genderIdentity =  toPlanRegisterViewModel.genderIdentityEnum,
-    // cpf = this.binding.edtCpf.text.toString()
-    // .replace(".","")
-    // .replace("-","")
-    // .trim(),
-    // email = this.binding.edtEmail.text.toString(),
-    // phone = this.binding.edtPhone.text.toString()
-    // .replace("(","")
-    // .replace(")","")
-    // .replace("-","")
-    // .replace(" ","")
-    // .trim()
-    // )
-    // }
+     private fun seturgencyRegisterModel() {
+         toPlanRegisterViewModel.toPlanRegisterModel =
+             ToPlanRegisterModel(
+                 name = this.binding.edtName.text.toString(),
+                 rg = this.binding.edtRg.text.toString(),
+                 birthDate = this.binding.edtSinceDate.text.toString()
+                     .replace("/","")
+                     .replace(" ","")
+                     .trim(),
+                 sexOrientation =  toPlanRegisterViewModel.sexOrientationEnum,
+                 genderIdentity =  toPlanRegisterViewModel.genderIdentityEnum,
+                 cpf = this.binding.edtCpf.text.toString()
+                    .replace(".","")
+                    .replace("-","")
+                    .trim(),
+                 email = this.binding.edtEmail.text.toString(),
+                 phone = this.binding.edtPhone.text.toString()
+                 .replace("(","")
+                 .replace(")","")
+                 .replace("-","")
+                 .replace(" ","")
+                 .trim(),
+                 password = this.binding.edtPassword.text.toString()
+         )
+     }
 }
