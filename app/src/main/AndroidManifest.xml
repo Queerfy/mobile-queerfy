@@ -12,17 +12,17 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+<!--        <activity-->
+<!--            android:name=".view.ToPlanRegisterActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.UrgencyRegisterActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.RegisterChooseActivity"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".view.ToPlanRegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.UrgencyRegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.RegisterChooseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.LoginFormActivity"
+            android:name=".view.MyAdsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -103,6 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/InputLogin"
         android:hint="Senha"
+        android:inputType="textPassword"
         />
 
     <androidx.appcompat.widget.AppCompatButton
