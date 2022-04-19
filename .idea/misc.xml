@@ -33,10 +33,22 @@
         <entry key="..\:/Users/Nicol/AndroidStudioProjects/queerfy/app/src/main/res/layout/content_register_button.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Nicol/AndroidStudioProjects/queerfy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.16" />
         <entry key="..\:/Users/Nicol/AndroidStudioProjects/queerfy/app/src/main/res/mipmap-anydpi-v26/ic_logo_queerfy.xml" value="0.16" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/drawable/border_bottom.xml" value="0.14" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/drawable/container_header.xml" value="0.14" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/drawable/input_login.xml" value="0.14" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_house_register_step_five.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_house_register_step_four.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_house_register_step_one.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_house_register_step_six.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_house_register_step_three.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_house_register_step_two.xml" value="0.32222222222222224" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_login_form.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_my_ads.xml" value="0.2" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_my_reservations.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_register_choose.xml" value="0.32222222222222224" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_toplan_register.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_urgency_register.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activivity_my_favorites.xml" value="0.32222222222222224" />
       </map>
     </option>
   </component>
