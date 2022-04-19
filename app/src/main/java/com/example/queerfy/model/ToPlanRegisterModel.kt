@@ -6,7 +6,7 @@ import java.util.*
 
 data class ToPlanRegisterModel(
     val name: String,
-    val sinceDate: Date,
+    val birthDate: String,
     val sexOrientation: SexOrientationEnum,
     val genderIdentity: GenderIdentityEnum,
     val rg: String,
