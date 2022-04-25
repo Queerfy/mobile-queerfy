@@ -102,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/InputLogin"
-        android:hint="Senha"
+        android:hint="@string/hint_password"
         android:inputType="textPassword"
         />
 

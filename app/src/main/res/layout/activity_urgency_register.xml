@@ -141,6 +141,42 @@
                     android:padding="10dp"
                     android:background="@drawable/shape_register_edit_text" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    android:textColor="@color/red"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:background="@drawable/shape_register_edit_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password_confirmation"
+                    android:textColor="@color/red"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/edtPasswordConfirmation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:background="@drawable/shape_register_edit_text" />
+
                 <Button
                     android:id="@+id/btnFinish"
                     android:layout_width="match_parent"

@@ -23,7 +23,7 @@ interface Api {
 
     companion object {
         // Trocar para o ip local da maquina
-        var url = "http://192.168.0.51:8080/"
+        var url = "https://d668-2804-14c-d2-8029-e916-3304-606e-fd66.ngrok.io/"
 
         fun create(): Api{
             var retrofit = Retrofit.Builder()

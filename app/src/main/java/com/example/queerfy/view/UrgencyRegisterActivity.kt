@@ -117,6 +117,11 @@ class UrgencyRegisterActivity : AppCompatActivity() {
             return false
         }
 
+        if (this.binding.edtPassword.text.toString().isEmpty()) {
+            this.binding.edtPassword.error = "Senha Invalida!"
+            return false
+        }
+
         return true
     }
 
@@ -125,7 +130,7 @@ class UrgencyRegisterActivity : AppCompatActivity() {
             UrgencyRegisterModel(
                 name = this.binding.edtName.text.toString(),
                 sexOrientation =  urgencyRegisterViewModel.sexOrientationEnum,
-                genderIdentity =  urgencyRegisterViewModel.genderIdentityEnum,
+                genre =  urgencyRegisterViewModel.genderIdentityEnum,
                 cpf = this.binding.edtCpf.text.toString()
                     .replace(".","")
                     .replace("-","")
@@ -136,7 +141,8 @@ class UrgencyRegisterActivity : AppCompatActivity() {
                     .replace(")","")
                     .replace("-","")
                     .replace(" ","")
-                    .trim()
+                    .trim(),
+                password = this.binding.edtPassword.text.toString()
             )
     }
 }
