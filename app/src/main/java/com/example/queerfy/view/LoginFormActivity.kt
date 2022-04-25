@@ -8,7 +8,7 @@ import com.example.queerfy.databinding.ActivityLoginFormBinding
 import com.example.queerfy.model.LoginUserModel
 import com.example.queerfy.viewModel.LoginViewModel
 
-class LoginFormActivity: AppCompatActivity() {
+class LoginFormActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginFormBinding
     private val loginUserViewModel = LoginViewModel()
@@ -28,7 +28,7 @@ class LoginFormActivity: AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        this.binding.btEntrar.setOnClickListener{
+        this.binding.btEntrar.setOnClickListener {
             setLoginUserModel()
 
             loginUserViewModel.loginUserModel?.let { it1 ->

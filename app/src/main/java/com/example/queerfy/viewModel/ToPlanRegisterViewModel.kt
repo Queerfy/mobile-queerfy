@@ -17,7 +17,6 @@ class ToPlanRegisterViewModel {
     var sexOrientationEnum = SexOrientationEnum.SELECT
     var genderIdentityEnum = GenderIdentityEnum.SELECT
 
-    //TODO Criar função para enviar informações do urgencyRegisterModel para o banco
     fun putIntoBd(toPlanRegisterModel: ToPlanRegisterModel, context: Context) {
         this.toPlanRegisterModel?.let {
             val postToPlan = Api.create().registerToPlan(toPlanRegisterModel)
@@ -25,13 +24,21 @@ class ToPlanRegisterViewModel {
             postToPlan.enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     if (response.isSuccessful) {
-                        Toast.makeText(context, "Usuario cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            "Usuario cadastrado com sucesso!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         // Ir para tela de login
                         val loginActivity = Intent(context, RegisterChooseActivity::class.java)
 
                         context.startActivity(loginActivity)
-                    }else {
-                        Toast.makeText(context, "Erro ao se cadastrar, tente novamente!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "Erro ao se cadastrar, tente novamente!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
 

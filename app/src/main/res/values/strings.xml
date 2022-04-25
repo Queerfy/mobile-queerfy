@@ -68,4 +68,12 @@
     <string name="title_your_ad">Hora de dar cara ao seu anúncio</string>
     <string name="best_photos">Escolha as melhores fotos</string>
     <string name="upload_photos">Envie fotos a partir do seu dispositivos</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+    <string name="menu">Menu</string>
+    <string name="home">Home</string>
+    <string name="myAccount">Minha conta</string>
+    <string name="myAds">Meus anúncios</string>
+    <string name="myFavorites">Menu favoritos</string>
+    <string name="myReservation">Minhas reservas</string>
+    <string name="notification">Notificaçóes</string>
 </resources>

@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.queerfy.databinding.ActivivityMyFavoritesBinding
 
-class MyFavoritesActivity: AppCompatActivity() {
+class MyFavoritesActivity : AppCompatActivity() {
     private lateinit var binding: ActivivityMyFavoritesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
