@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.RegisterChooseActivity"
-    android:background="@color/background_light">
+    tools:context=".view.RegisterChooseActivity">
 
     <TextView
         android:id="@+id/txtTitle"

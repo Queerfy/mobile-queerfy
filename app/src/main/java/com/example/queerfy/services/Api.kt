@@ -18,12 +18,12 @@ interface Api {
     @POST("users")
     fun registerToPlan(@Body toPlan: ToPlanRegisterModel): Call<Void>
 
-    @POST("autenticate")
+    @POST("users/autenticate")
     fun loginUser(@Body userLogin: LoginUserModel): Call<User>
 
     companion object {
         // Trocar para o ip local da maquina
-        var url = "http:/192.168.0.51:8080/"
+        var url = "http://192.168.0.51:8080/"
 
         fun create(): Api{
             var retrofit = Retrofit.Builder()

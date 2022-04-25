@@ -97,7 +97,26 @@ class UrgencyRegisterActivity : AppCompatActivity() {
     }
 
     private fun validateFields(): Boolean {
-        // TODO Validar todos os campos (Botão Finalizar)
+        if (this.binding.edtName.toString().isEmpty()) {
+            this.binding.edtName.error = "Nome Invalido!"
+            return false
+        }
+
+        if (this.binding.edtCpf.toString().isEmpty()) {
+            this.binding.edtCpf.error = "CPF Invalido!"
+            return false
+        }
+
+        if (this.binding.edtEmail.toString().isEmpty()) {
+            this.binding.edtEmail.error = "Email Invalido!"
+            return false
+        }
+
+        if (this.binding.edtPhone.toString().isEmpty()) {
+            this.binding.edtPhone.error = "Telefone Invalido!"
+            return false
+        }
+
         return true
     }
 
