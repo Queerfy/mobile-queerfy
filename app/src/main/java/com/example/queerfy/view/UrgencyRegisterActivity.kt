@@ -2,14 +2,17 @@ package com.example.queerfy.view
 
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.EditText
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.queerfy.R
 import com.example.queerfy.databinding.ActivityUrgencyRegisterBinding
 import com.example.queerfy.model.UrgencyRegisterModel
+import com.example.queerfy.services.Api
 import com.example.queerfy.utils.*
 import com.example.queerfy.viewModel.UrgencyRegisterViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.lang.ref.WeakReference
 
 
@@ -82,8 +85,11 @@ class UrgencyRegisterActivity : AppCompatActivity() {
             // TODO Validar campos
             if (validateFields()) {
                 seturgencyRegisterModel()
-
-                urgencyRegisterViewModel.putIntoBd()
+                urgencyRegisterViewModel.urgencyRegisterModel?.let { it1 ->
+                    urgencyRegisterViewModel.putIntoBd(
+                        it1, this
+                    )
+                }
             } else {
                 // TODO Mostrar que tem algo errado e dar foco
             }

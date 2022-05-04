@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginFormActivity"
+    android:background="@color/background_light"
+    >
+
+    <TextView
+        android:id="@+id/txt_head"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textColor="@color/red"
+        android:text="Bem-Vinde"
+        android:padding="30dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        />
+
+    <View
+        android:id="@+id/register_container"
+        style="@style/ContainerHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_head"
+        android:onClick="avancedRegisterChoose"
+        />
+
+    <ImageView
+        android:src="@drawable/userplus"
+        app:layout_constraintTop_toTopOf="@id/register_container"
+        app:layout_constraintLeft_toLeftOf="@id/register_container"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/register_container"
+        app:layout_constraintStart_toStartOf="@id/register_container"
+        app:layout_constraintEnd_toEndOf="@id/register_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Crie sua Conta na Queerfy"
+        android:textSize="22sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_container"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="ou entre em sua conta"
+        android:textColor="#C4C4C4"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/label_email"
+        style="@style/LabelForInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_info"
+        android:text="E-mail"
+        />
+
+    <EditText
+        android:id="@+id/edit_email"
+        app:layout_constraintTop_toBottomOf="@id/label_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/InputLogin"
+        android:hint="contato@purple.com.br"
+        />
+
+    <TextView
+        android:id="@+id/label_senha"
+        style="@style/LabelForInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_email"
+        android:text="Senha"
+        />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        app:layout_constraintTop_toBottomOf="@id/label_senha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/InputLogin"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_entrar"
+        style="@style/Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_senha"
+        android:layout_marginTop="25dp"
+        android:text="Entrar na sua conta"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:drawableLeft="@drawable/ic_button_login"
+        android:paddingStart="80dp"
+        android:paddingEnd="80dp"
+        />
+
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_entrar"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
