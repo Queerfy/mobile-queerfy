@@ -89,4 +89,9 @@
     <string name="title_your_ad">Hora de dar cara ao seu anúncio</string>
     <string name="best_photos">Escolha as melhores fotos</string>
     <string name="upload_photos">Envie fotos a partir do seu dispositivos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="footer_address_street">Rua Haddock Lobo, 595 – 8° Andar</string>
+    <string name="footer_address_cep">"Cerqueira César – CEP: 01414–001"</string>
+    <string name="footer_address_city">São Paulo - SP</string>
 </resources>

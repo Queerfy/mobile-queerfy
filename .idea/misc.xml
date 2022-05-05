@@ -33,16 +33,6 @@
         <entry key="..\:/Users/Nicol/AndroidStudioProjects/queerfy/app/src/main/res/layout/content_register_button.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Nicol/AndroidStudioProjects/queerfy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.16" />
         <entry key="..\:/Users/Nicol/AndroidStudioProjects/queerfy/app/src/main/res/mipmap-anydpi-v26/ic_logo_queerfy.xml" value="0.16" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/drawable/default_divider.xml" value="0.1325" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/drawable/edit_text.xml" value="0.1325" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/drawable/ic_chevron_down_orange.xml" value="0.1325" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/drawable/shape_register_button.xml" value="0.1325" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout-v23/activity_residence.xml" value="0.25" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout-v26/activity_residence.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout-v28/activity_residence.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/activity_register_choose.xml" value="0.25" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/activity_residence.xml" value="0.33" />
-        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/activity_toplan_register.xml" value="0.25" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/drawable/border_bottom.xml" value="0.14" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/drawable/container_header.xml" value="0.14" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/drawable/input_login.xml" value="0.14" />
@@ -59,6 +49,12 @@
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_toplan_register.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_urgency_register.xml" value="0.23157894736842105" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activivity_my_favorites.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/projeot/mobile-queerfy/app/src/main/res/layout-v23/activity_residence.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/projeot/mobile-queerfy/app/src/main/res/layout-v26/activity_residence.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/projeot/mobile-queerfy/app/src/main/res/layout/activity_residence.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/projeot/mobile-queerfy/app/src/main/res/layout/activity_toplan_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/projeot/mobile-queerfy/app/src/main/res/layout/activity_urgency_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/projeot/mobile-queerfy/app/src/main/res/layout/fragment_footer.xml" value="0.33" />
       </map>
     </option>
   </component>

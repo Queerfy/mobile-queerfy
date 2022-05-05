@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.UrgencyRegisterActivity"
     android:background="@color/background_light">
 
@@ -71,7 +70,6 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_register_edit_text"
                     android:hint="@string/hint_since_date"
-                    android:textSize="16sp"
                     android:padding="10dp"
                     android:textSize="16sp" />
 
@@ -207,7 +205,6 @@
                     android:id="@+id/edtPasswordConfirmation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shape_register_edit_text"
                     android:hint="@string/hint_password"
                     android:inputType="textPassword"
                     android:padding="10dp"

@@ -316,6 +316,13 @@
                     app:layout_constraintLeft_toRightOf="@id/characteristics_host_photo"
                     app:layout_constraintTop_toBottomOf="@id/characteristics_host_for" />
 
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_residence_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pets_characteristic" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
