@@ -68,4 +68,8 @@
     <string name="title_your_ad">Hora de dar cara ao seu anúncio</string>
     <string name="best_photos">Escolha as melhores fotos</string>
     <string name="upload_photos">Envie fotos a partir do seu dispositivos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_trend_residence_title">Casa - 1 quarto disponível</string>
+    <string name="fragment_trend_residence_location">"SP - Alphaville "</string>
 </resources>
