@@ -33,5 +33,11 @@
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:textAllCaps">false</item>
     </style>
+    
+    <style name="CategoryButton">
+        <item name="android:textColor">@color/font</item>
+        <item name="background">@drawable/category_button</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
 
 </resources>

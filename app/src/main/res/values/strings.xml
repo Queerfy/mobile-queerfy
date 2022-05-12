@@ -24,7 +24,7 @@
     <string name="hint_rg">__.___.___-_</string>
     <string name="hint_cpf">___.___.___-__</string>
     <string name="hint_email">email@email.com</string>
-    <string name="hint_cellphone">(99) 99999-9999</string>
+    <string name="hint_cellphone">(99) 99999–9999</string>
     <string name="hint_password">********</string>
     <string name="apartment">Apartamento</string>
     <string name="house">House</string>
@@ -68,8 +68,18 @@
     <string name="title_your_ad">Hora de dar cara ao seu anúncio</string>
     <string name="best_photos">Escolha as melhores fotos</string>
     <string name="upload_photos">Envie fotos a partir do seu dispositivos</string>
+    <string name="fragment_trend_residence_title">Casa - 1 quarto disponível</string>
+    <string name="fragment_trend_residence_location">"SP - Alphaville"</string>
+    <string name="residence_list_trend_title">Locações com as melhores avaliações em {cidade}</string>
+    <string name="residence_list_trend_subtitle">Estas acomodações foram muito bem avaliadas em vários aspectos.</string>
+    <string name="fragment_trend_residence_image_description">Imagem da residência selecionada</string>
+    <string name="residence_list_categories_title">O que você gostaria de ter no local onde está procurando?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="fragment_trend_residence_title">Casa - 1 quarto disponível</string>
-    <string name="fragment_trend_residence_location">"SP - Alphaville "</string>
+    <string name="category_wi_fi">Wi-Fi</string>
+    <string name="category_animals">Animais</string>
+    <string name="category_garage">Garagem</string>
+    <string name="category_suit">Suíte</string>
+    <string name="category_kitchen">Cozinha</string>
+    <string name="residence_list_title">Aluguéis excelentes na área selecionada</string>
 </resources>
