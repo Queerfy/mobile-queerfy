@@ -12,7 +12,31 @@
         tools:layout="@layout/fragment_home" />
 
     <activity
-        android:id="@+id/toPlanRegister"
+        android:id="@+id/myAccount"
+        android:name="com.example.queerfy.view.ToPlanRegisterActivity"
+        android:label="ToPlanActivity"
+        tools:layout="@layout/activity_toplan_register" />
+
+    <activity
+        android:id="@+id/myAds"
+        android:name="com.example.queerfy.view.MyAdsActivity"
+        android:label="myAds"
+        tools:layout="@layout/activity_my_ads" />
+
+    <activity
+        android:id="@+id/myFavorites"
+        android:name="com.example.queerfy.view.MyFavoritesActivity"
+        android:label="myFavorites"
+        tools:layout="@layout/activity_toplan_register" />
+
+    <activity
+        android:id="@+id/myReservations"
+        android:name="com.example.queerfy.view.MyReservationsActivity"
+        android:label="myReservations"
+        tools:layout="@layout/activity_my_reservations" />
+
+    <activity
+        android:id="@+id/notification"
         android:name="com.example.queerfy.view.ToPlanRegisterActivity"
         android:label="ToPlanActivity"
         tools:layout="@layout/activity_toplan_register" />

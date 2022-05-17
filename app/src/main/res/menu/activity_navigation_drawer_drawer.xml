@@ -28,5 +28,8 @@
                     android:title="@string/notification" />
             </menu>
         </item>
+        <item
+            android:id="@+id/exit"
+            android:title="@string/exit" />
     </group>
 </menu>

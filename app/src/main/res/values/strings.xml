@@ -76,4 +76,8 @@
     <string name="myFavorites">Menu favoritos</string>
     <string name="myReservation">Minhas reservas</string>
     <string name="notification">Notificaçóes</string>
+    <string name="full_address">Rua Haddock Lobo, 595 - 8° Andar</string>
+    <string name="address">Cerqueira César - CEP: 01414-001</string>
+    <string name="sp">São Paulo - SP</string>
+    <string name="exit">Sair</string>
 </resources>

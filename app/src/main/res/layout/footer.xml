@@ -3,67 +3,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
 
         <ImageButton
             android:id="@+id/imgTwitter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:drawableBottom="@drawable/ic_menu"
-            android:src="@drawable/ic_menu" />
+            android:src="@drawable/twitter" />
 
         <ImageButton
             android:id="@+id/imgFacebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:drawableBottom="@drawable/ic_menu"
-            android:src="@drawable/ic_menu" />
+            android:src="@drawable/facebook" />
 
         <ImageButton
             android:id="@+id/imgInstagram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:drawableBottom="@drawable/ic_menu"
-            android:src="@drawable/ic_menu" />
+            android:src="@drawable/instagram" />
 
         <ImageButton
             android:id="@+id/imgLinkedin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:drawableBottom="@drawable/ic_menu"
-            android:src="@drawable/ic_menu" />
+            android:src="@drawable/linkedin" />
 
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black" />
+        android:layout_height="1.5dp"
+        android:background="@color/black"
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rua Haddock Lobo, 595 - 8° Andar" />
+        android:text="@string/full_address"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cerqueira César - CEP: 01414-001" />
+        android:text="@string/address"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="São Paulo - SP " />
+        android:text="@string/sp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1.5dp"
         android:background="@color/black" />
 
     <ImageView
