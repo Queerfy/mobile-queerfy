@@ -20,12 +20,12 @@ import retrofit2.Response
 import java.util.function.Predicate
 import kotlin.streams.toList
 
-class ResidenceActivity : AppCompatActivity() {
+class ResidenceActivity : AppCompatActivity()  {
 
     val houseId = 40
     var likedResidence : Boolean = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_residence)
 
@@ -36,17 +36,15 @@ class ResidenceActivity : AppCompatActivity() {
 
         getHouse()
         verifyLikedHouse()
-
     }
 
-    fun getHouse() {
+    fun getHouse()  {
         // Aqui vai o id da casa dinamicamente
         val getProperty = Api.create().getProperty(houseId)
 
         getProperty.enqueue(object: Callback<Property> {
-            override fun onResponse(call: Call<Property>, response: Response<Property>) {
-                if (response.isSuccessful) {
-
+            override fun onResponse(call: Call<Property>, response: Response<Property>)  {
+                if  (response.isSuccessful)  {
                     val propertyType = response.body()?.propertyType
                     val roomQuantity = response.body()?.roomQuantity
                     val description = response.body()?.description
@@ -75,59 +73,55 @@ class ResidenceActivity : AppCompatActivity() {
                     findViewById<TextView>(R.id.booking_total_daily_price).text = "R$ ${total}"
                     findViewById<TextView>(R.id.residence_location).text = uf
 
-                    if (haveWifi == true) {
+                    if  (haveWifi == true)  {
                         findViewById<TextView>(R.id.wifi_characteristic).visibility = VISIBLE
                     }
 
-                    if (haveKitchen == true) {
+                    if  (haveKitchen == true)  {
                         findViewById<TextView>(R.id.kitchen_characteristic).visibility = VISIBLE
                     }
 
-                    if (haveAnimals == true) {
+                    if  (haveAnimals == true)  {
                         findViewById<TextView>(R.id.pets_characteristic).visibility = VISIBLE
                     }
 
-                    if (haveSuite == true) {
+                    if  (haveSuite == true)  {
                         findViewById<TextView>(R.id.suite_characteristic).visibility = VISIBLE
                     }
 
-                    if (haveGarage == true) {
+                    if  (haveGarage == true)  {
                         findViewById<TextView>(R.id.garage_characteristic).visibility = VISIBLE
                     }
 
                     val getOwner = Api.create().getUser(idOwner as Int)
 
                     getOwner.enqueue(object: Callback<User> {
-                        override fun onResponse(call: Call<User>, response: Response<User>) {
-                            if(response.isSuccessful) {
+                        override fun onResponse(call: Call<User>, response: Response<User>)  {
+                            if  (response.isSuccessful)  {
                                 val nameOwner = response.body()?.name
 
                                 findViewById<TextView>(R.id.owner_residence).text = nameOwner
                             }
                         }
 
-                        override fun onFailure(call: Call<User>, t: Throwable) {
+                        override fun onFailure(call: Call<User>, t: Throwable)  {
                             println(t.message)
 
                             Toast.makeText(this@ResidenceActivity, "Erro ao carregar informações do dono!", Toast.LENGTH_SHORT).show()
                         }
-
                     })
-
-
                 }
             }
 
-            override fun onFailure(call: Call<Property>, t: Throwable) {
+            override fun onFailure(call: Call<Property>, t: Throwable)  {
                 println(t.message)
 
                 Toast.makeText(this@ResidenceActivity, "Erro na Api", Toast.LENGTH_SHORT).show()
             }
-
         })
     }
 
-    fun verifyLikedHouse() {
+    fun verifyLikedHouse()  {
         val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
 
         val idUser = preferences.getInt("idUser", 0)
@@ -136,19 +130,19 @@ class ResidenceActivity : AppCompatActivity() {
 
         getUser.enqueue(object: Callback<User>{
             @RequiresApi(Build.VERSION_CODES.N)
-            override fun onResponse(call: Call<User>, response: Response<User>) {
-                if (response.isSuccessful) {
+            override fun onResponse(call: Call<User>, response: Response<User>)  {
+                if  (response.isSuccessful)  {
                     val favoritesUser = response.body()?.favorite
 
                     val housedLiked = favoritesUser?.stream()?.filter(Predicate { favorite -> favorite.propertyId == houseId})?.toList()
 
-                    if (housedLiked!!.isNotEmpty()) {
+                    if  (housedLiked!!.isNotEmpty())  {
                         likedResidence = true
 
                         findViewById<ImageView>(R.id.heart_like).setImageResource(R.drawable.colorful_heart)
 
                         // Toast.makeText(this@ResidenceActivity, "Casa já favoritada!", Toast.LENGTH_SHORT).show()
-                    }else {
+                    } else {
                         likedResidence = false
 
                         findViewById<ImageView>(R.id.heart_like).setImageResource(R.drawable.ic_empty_heart)
@@ -156,21 +150,17 @@ class ResidenceActivity : AppCompatActivity() {
                         // Toast.makeText(this@ResidenceActivity, "Casa ainda não favoritada!", Toast.LENGTH_SHORT).show()
                     }
                 }
-
-
             }
 
-            override fun onFailure(call: Call<User>, t: Throwable) {
+            override fun onFailure(call: Call<User>, t: Throwable)  {
                 println(t.message)
 
                 Toast.makeText(this@ResidenceActivity, "Erro ao carregar as informações", Toast.LENGTH_SHORT).show()
             }
-
         })
-
     }
 
-    fun handleLikeHouse(v: View) {
+    fun handleLikeHouse(v: View)  {
         val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
 
         val idUser = preferences.getInt("idUser", 0)
@@ -179,17 +169,17 @@ class ResidenceActivity : AppCompatActivity() {
 
         getFavoriteUser.enqueue(object: Callback<User> {
             @RequiresApi(Build.VERSION_CODES.N)
-            override fun onResponse(call: Call<User>, response: Response<User>) {
-                if (response.isSuccessful) {
+            override fun onResponse(call: Call<User>, response: Response<User>)  {
+                if  (response.isSuccessful)  {
                     val favoritesUser = response.body()?.favorite
 
                     val housedLiked = favoritesUser?.stream()?.filter(Predicate { favorite -> favorite.propertyId == houseId})?.toList()
 
-                    if (!housedLiked!!.isEmpty()) {
+                    if  (!housedLiked!!.isEmpty())  {
                         val deleteFavorite = Api.create().deleteFavorite(housedLiked[0].id as Int)
 
-                        deleteFavorite.enqueue(object: Callback<Void> {
-                            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                        deleteFavorite.enqueue(object: Callback<Void>  {
+                            override fun onResponse(call: Call<Void>, response: Response<Void>)  {
                                 likedResidence = false
 
                                 findViewById<ImageView>(R.id.heart_like).setImageResource(R.drawable.ic_empty_heart)
@@ -197,21 +187,20 @@ class ResidenceActivity : AppCompatActivity() {
                                 // Toast.makeText(this@ResidenceActivity, "Favorito deletado com sucesso!", Toast.LENGTH_SHORT).show()
                             }
 
-                            override fun onFailure(call: Call<Void>, t: Throwable) {
+                            override fun onFailure(call: Call<Void>, t: Throwable)  {
                                 println(t.message)
 
                                 Toast.makeText(this@ResidenceActivity, "Erro ao deletar o favorito!", Toast.LENGTH_SHORT).show()
                             }
-
                         })
-                    }else {
+                    } else {
 
                         val newFavorite = NewFavorite(houseId, idUser)
 
                         val handleFavoriteHouse = Api.create().createFavorite(newFavorite)
 
                         handleFavoriteHouse.enqueue(object: Callback<Void>{
-                            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                            override fun onResponse(call: Call<Void>, response: Response<Void>)  {
                                 likedResidence = true
 
                                 findViewById<ImageView>(R.id.heart_like).setImageResource(R.drawable.colorful_heart)
@@ -219,25 +208,21 @@ class ResidenceActivity : AppCompatActivity() {
                                 // Toast.makeText(this@ResidenceActivity, "Favorito adicionado com sucesso!", Toast.LENGTH_SHORT).show()
                             }
 
-                            override fun onFailure(call: Call<Void>, t: Throwable) {
+                            override fun onFailure(call: Call<Void>, t: Throwable)  {
                                 println(t.message)
 
                                 Toast.makeText(this@ResidenceActivity, "Erro ao adicionar ao favoritos", Toast.LENGTH_SHORT).show()
                             }
-
                         })
-
                     }
                 }
             }
 
-            override fun onFailure(call: Call<User>, t: Throwable) {
+            override fun onFailure(call: Call<User>, t: Throwable)  {
                 println(t.message)
 
                 Toast.makeText(this@ResidenceActivity, "Erro ao carregar informações do usuario", Toast.LENGTH_SHORT).show()
             }
-
         })
     }
-
 }
