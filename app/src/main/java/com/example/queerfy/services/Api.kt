@@ -1,15 +1,10 @@
 package com.example.queerfy.services
 
-import com.example.queerfy.model.LoginUserModel
-import com.example.queerfy.model.ToPlanRegisterModel
-import com.example.queerfy.model.UrgencyRegisterModel
-import com.example.queerfy.model.User
+import com.example.queerfy.model.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import retrofit2.http.Body
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface Api {
     @POST("users")
@@ -18,12 +13,25 @@ interface Api {
     @POST("users")
     fun registerToPlan(@Body toPlan: ToPlanRegisterModel): Call<Void>
 
-    @POST("autenticate")
+    @GET("users/{id}")
+    fun getUser(@Path("id") id: Int): Call<User>
+
+    @POST("users/autenticate")
     fun loginUser(@Body userLogin: LoginUserModel): Call<User>
+
+    @GET("properties/{id}")
+    fun  getProperty(@Path("id") id: Int): Call<Property>
+
+    @POST("favorites")
+    fun createFavorite(@Body newFavorite: NewFavorite): Call<Void>
+
+    @DELETE("favorites/{id}")
+    fun deleteFavorite(@Path("id") id: Int): Call<Void>
+
 
     companion object {
         // Trocar para o ip local da maquina
-        var url = "http:/192.168.0.51:8080/"
+        var url = "http://10.18.7.9:8080/"
 
         fun create(): Api{
             var retrofit = Retrofit.Builder()

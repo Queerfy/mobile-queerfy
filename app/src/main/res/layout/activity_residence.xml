@@ -37,7 +37,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:maxWidth="300dp"
-                    android:text="@string/residence_title"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -89,7 +88,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:justificationMode="inter_word"
-                    android:text="@string/description_text"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -101,7 +99,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/description_details"
                     android:textColor="@color/border_dark"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/description_text"
@@ -133,7 +130,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/booking_daily_price"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -156,7 +152,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/booking_daily_price"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintRight_toRightOf="parent"
@@ -247,45 +242,91 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/third_divider" />
 
-                <TextView
-                    android:id="@+id/wifi_characteristic"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:drawablePadding="5dp"
-                    android:text="@string/wifi_characteristic"
-                    android:textColor="@color/black"
-                    app:drawableStartCompat="@drawable/ic_wifi"
-                    app:drawableTint="@color/black"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/characteristics_title" />
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/characteristics_title"
+                    android:id="@+id/list_characteristics"
+                    >
 
-                <TextView
-                    android:id="@+id/kitchen_characteristic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:drawablePadding="5dp"
-                    android:text="@string/kitchen_characteristic"
-                    android:textColor="@color/black"
-                    app:drawableStartCompat="@drawable/ic_kitchen"
-                    app:drawableTint="@color/black"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/wifi_characteristic"
-                    tools:targetApi="m" />
+                    <TextView
+                        android:id="@+id/wifi_characteristic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:drawablePadding="5dp"
+                        android:text="@string/wifi_characteristic"
+                        android:textColor="@color/black"
+                        app:drawableStartCompat="@drawable/ic_wifi"
+                        app:drawableTint="@color/black"
+                        android:visibility="gone"
+                        />
 
-                <TextView
-                    android:id="@+id/pets_characteristic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:drawablePadding="5dp"
-                    android:text="@string/pets_characteristic"
-                    android:textColor="@color/black"
-                    app:drawableStartCompat="@drawable/ic_pets"
-                    app:drawableTint="@color/black"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/kitchen_characteristic" />
+                    <TextView
+                        android:id="@+id/kitchen_characteristic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:drawablePadding="5dp"
+                        android:text="@string/kitchen_characteristic"
+                        android:textColor="@color/black"
+                        app:drawableStartCompat="@drawable/ic_kitchen"
+                        app:drawableTint="@color/black"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/wifi_characteristic"
+                        tools:targetApi="m"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/pets_characteristic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:drawablePadding="5dp"
+                        android:text="@string/pets_characteristic"
+                        android:textColor="@color/black"
+                        app:drawableStartCompat="@drawable/ic_pets"
+                        app:drawableTint="@color/black"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/kitchen_characteristic"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/suite_characteristic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:drawablePadding="5dp"
+                        android:text="@string/suite"
+                        android:textColor="@color/black"
+                        app:drawableStartCompat="@drawable/ic_pets"
+                        app:drawableTint="@color/black"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pets_characteristic"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/garage_characteristic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:drawablePadding="5dp"
+                        android:text="@string/garage"
+                        android:textColor="@color/black"
+                        app:drawableStartCompat="@drawable/ic_pets"
+                        app:drawableTint="@color/black"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/suite_characteristic"
+                        android:visibility="gone"
+                        />
+
+                </LinearLayout>
+
 
                 <TextView
                     android:id="@+id/characteristics_host_for"
@@ -322,7 +363,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/pets_characteristic" />
+                    app:layout_constraintTop_toBottomOf="@id/list_characteristics" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
