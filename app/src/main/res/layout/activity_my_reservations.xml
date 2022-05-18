@@ -22,7 +22,7 @@
             android:id="@+id/text_title"
             android:textSize="40sp"
             android:textColor="@color/green"
-            android:text="Meus favoritos"
+            android:text="Minhas reservas"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:textStyle="bold"
