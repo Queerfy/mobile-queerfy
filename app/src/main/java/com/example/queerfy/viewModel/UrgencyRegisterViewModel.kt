@@ -17,7 +17,6 @@ class UrgencyRegisterViewModel {
     var sexOrientationEnum = SexOrientationEnum.SELECT
     var genderIdentityEnum = GenderIdentityEnum.SELECT
 
-    //TODO Criar função para enviar informações do urgencyRegisterModel para o banco
     fun putIntoBd(urgencyRegister: UrgencyRegisterModel, context: Context) {
         this.urgencyRegisterModel?.let {
             val postUrgency = Api.create().registerUrgency(urgencyRegister)
@@ -27,13 +26,21 @@ class UrgencyRegisterViewModel {
                     println(response)
                     if (response.isSuccessful) {
                         println("Criado com sucesso!")
-                        Toast.makeText(context, "Usuario cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            "Usuario cadastrado com sucesso!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         // Ir para tela de login
                         val loginActivity = Intent(context, RegisterChooseActivity::class.java)
 
                         context.startActivity(loginActivity)
-                    }else {
-                        Toast.makeText(context, "Erro ao se cadastrar, tente novamente!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "Erro ao se cadastrar, tente novamente!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
 

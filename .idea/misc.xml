@@ -45,10 +45,18 @@
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_login_form.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_my_ads.xml" value="0.2" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_my_reservations.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.1762917933130699" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_register_choose.xml" value="0.32222222222222224" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_toplan_register.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_urgency_register.xml" value="0.23157894736842105" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activivity_my_favorites.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/content_navigation_drawer.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/footer.xml" value="0.3223308883455583" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/fragment_home.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/menu/activity_navigation_drawer_drawer.xml" value="0.3569230769230769" />
+        <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/menu/navigation_drawer.xml" value="0.2712962962962963" />
       </map>
     </option>
   </component>

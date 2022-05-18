@@ -43,15 +43,21 @@ class UrgencyRegisterActivity : AppCompatActivity() {
             options
         )
 
-        this.binding.spnSexOrientation.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        this.binding.spnSexOrientation.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                urgencyRegisterViewModel.sexOrientationEnum =
-                    SexOrientationEnum.fromId(position) ?: SexOrientationEnum.SELECT
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    urgencyRegisterViewModel.sexOrientationEnum =
+                        SexOrientationEnum.fromId(position) ?: SexOrientationEnum.SELECT
+                }
+
             }
-
-        }
     }
 
     private fun setupGenderIdentitySpinner() {
@@ -62,15 +68,21 @@ class UrgencyRegisterActivity : AppCompatActivity() {
             options
         )
 
-        this.binding.spnGenderIdentity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        this.binding.spnGenderIdentity.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                urgencyRegisterViewModel.genderIdentityEnum =
-                    GenderIdentityEnum.fromId(position) ?: GenderIdentityEnum.SELECT
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    urgencyRegisterViewModel.genderIdentityEnum =
+                        GenderIdentityEnum.fromId(position) ?: GenderIdentityEnum.SELECT
+                }
+
             }
-
-        }
     }
 
     private fun applyMasks() {
@@ -82,7 +94,6 @@ class UrgencyRegisterActivity : AppCompatActivity() {
 
     private fun setupListeners() {
         this.binding.btnFinish.setOnClickListener {
-            // TODO Validar campos
             if (validateFields()) {
                 seturgencyRegisterModel()
                 urgencyRegisterViewModel.urgencyRegisterModel?.let { it1 ->
@@ -105,18 +116,18 @@ class UrgencyRegisterActivity : AppCompatActivity() {
         urgencyRegisterViewModel.urgencyRegisterModel =
             UrgencyRegisterModel(
                 name = this.binding.edtName.text.toString(),
-                sexOrientation =  urgencyRegisterViewModel.sexOrientationEnum,
-                genderIdentity =  urgencyRegisterViewModel.genderIdentityEnum,
+                sexOrientation = urgencyRegisterViewModel.sexOrientationEnum,
+                genderIdentity = urgencyRegisterViewModel.genderIdentityEnum,
                 cpf = this.binding.edtCpf.text.toString()
-                    .replace(".","")
-                    .replace("-","")
+                    .replace(".", "")
+                    .replace("-", "")
                     .trim(),
                 email = this.binding.edtEmail.text.toString(),
                 phone = this.binding.edtPhone.text.toString()
-                    .replace("(","")
-                    .replace(")","")
-                    .replace("-","")
-                    .replace(" ","")
+                    .replace("(", "")
+                    .replace(")", "")
+                    .replace("-", "")
+                    .replace(" ", "")
                     .trim()
             )
     }

@@ -4,87 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MyReservationsActivity"
     android:background="@color/background_light"
-    >
+    tools:context=".view.MyReservationsActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
             android:id="@+id/text_title"
-            android:textSize="40sp"
-            android:textColor="@color/green"
-            android:text="Meus favoritos"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
-            />
+            android:text="Meus favoritos"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/border_bottom"
             android:layout_marginBottom="30dp"
-            >
+            android:background="@drawable/border_bottom"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <View
                     android:layout_width="140dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/house_ads"
                     android:layout_marginBottom="20dp"
-                    />
+                    android:background="@drawable/house_ads" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Check-in: 26/08/2022"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Check-out: 30/08/2022"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Total: R$ 590,00"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -94,21 +84,18 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/corner_down_left"
                         android:layout_marginLeft="50dp"
-                        />
+                        android:src="@drawable/corner_down_left" />
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/trash"
-                        />
+                        android:src="@drawable/trash" />
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/heart"
-                        />
+                        android:src="@drawable/heart" />
 
                 </LinearLayout>
 
@@ -117,9 +104,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="16sp"
                     android:text="Casa - 1 quarto disponivel"
-                    />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -130,17 +116,16 @@
                     android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/button_my_reservations"
                     android:layout_width="120dp"
                     android:layout_height="50dp"
-                    android:textColor="@color/white"
+                    android:layout_marginLeft="70sp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_my_reservations"
                     android:text="Visualizar"
                     android:textAllCaps="false"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="70sp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginTop="30dp"
-                    />
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -149,58 +134,51 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/border_bottom"
             android:layout_marginBottom="30dp"
-            >
+            android:background="@drawable/border_bottom"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <View
                     android:layout_width="140dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/house_ads"
                     android:layout_marginBottom="20dp"
-                    />
+                    android:background="@drawable/house_ads" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Check-in: 26/08/2022"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Check-out: 30/08/2022"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Total: R$ 590,00"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -210,21 +188,18 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/corner_down_left"
                         android:layout_marginLeft="50dp"
-                        />
+                        android:src="@drawable/corner_down_left" />
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/trash"
-                        />
+                        android:src="@drawable/trash" />
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/heart"
-                        />
+                        android:src="@drawable/heart" />
 
                 </LinearLayout>
 
@@ -233,9 +208,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="16sp"
                     android:text="Casa - 1 quarto disponivel"
-                    />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -246,17 +220,16 @@
                     android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/button_my_reservations"
                     android:layout_width="120dp"
                     android:layout_height="50dp"
-                    android:textColor="@color/white"
+                    android:layout_marginLeft="70sp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_my_reservations"
                     android:text="Visualizar"
                     android:textAllCaps="false"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="70sp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginTop="30dp"
-                    />
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -265,58 +238,51 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/border_bottom"
             android:layout_marginBottom="30dp"
-            >
+            android:background="@drawable/border_bottom"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <View
                     android:layout_width="140dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/house_ads"
                     android:layout_marginBottom="20dp"
-                    />
+                    android:background="@drawable/house_ads" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Check-in: 26/08/2022"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Check-out: 30/08/2022"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Total: R$ 590,00"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -326,21 +292,18 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/corner_down_left"
                         android:layout_marginLeft="50dp"
-                        />
+                        android:src="@drawable/corner_down_left" />
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/trash"
-                        />
+                        android:src="@drawable/trash" />
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/heart"
-                        />
+                        android:src="@drawable/heart" />
 
                 </LinearLayout>
 
@@ -349,9 +312,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="16sp"
                     android:text="Casa - 1 quarto disponivel"
-                    />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -362,17 +324,16 @@
                     android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/button_my_reservations"
                     android:layout_width="120dp"
                     android:layout_height="50dp"
-                    android:textColor="@color/white"
+                    android:layout_marginLeft="70sp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_my_reservations"
                     android:text="Visualizar"
                     android:textAllCaps="false"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="70sp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginTop="30dp"
-                    />
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 

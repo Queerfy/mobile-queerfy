@@ -17,13 +17,18 @@ class LoginViewModel {
         this.loginUserModel?.let {
             val postLogin = Api.create().loginUser(modelUserLogin)
 
-            postLogin.enqueue(object: Callback<User> {
+            postLogin.enqueue(object : Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
                     println(response.code())
                     if (response.isSuccessful) {
-                        Toast.makeText(context, "Usuario logado com sucesso!", Toast.LENGTH_SHORT).show()
-                    }else {
-                        Toast.makeText(context, "Erro ao se logar, tente novamente!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Usuario logado com sucesso!", Toast.LENGTH_SHORT)
+                            .show()
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "Erro ao se logar, tente novamente!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
 
