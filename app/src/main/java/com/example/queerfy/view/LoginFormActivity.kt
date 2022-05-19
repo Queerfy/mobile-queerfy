@@ -22,7 +22,7 @@ class LoginFormActivity: AppCompatActivity() {
     }
 
     fun avancedRegisterChoose(v: View) {
-        val registerChoose = Intent(this, RegisterChooseActivity::class.java)
+        val registerChoose = Intent(this, ResidenceListActivity::class.java)
 
         startActivity(registerChoose)
     }
