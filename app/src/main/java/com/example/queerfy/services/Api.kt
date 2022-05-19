@@ -32,6 +32,16 @@ interface Api {
     @POST("users/autenticate")
     fun loginUser(@Body userLogin: LoginUserModel): Call<User>
 
+    @GET("properties/{id}")
+    fun  getProperty(@Path("id") id: Int): Call<Property>
+
+    @POST("favorites")
+    fun createFavorite(@Body newFavorite: NewFavorite): Call<Void>
+
+    @DELETE("favorites/{id}")
+    fun deleteFavorite(@Path("id") id: Int): Call<Void>
+
+
     companion object {
         // Trocar para o ip local da maquina
         var url = "http://192.168.0.51:8080/"

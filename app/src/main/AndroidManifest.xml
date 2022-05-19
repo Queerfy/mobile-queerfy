@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".view.ResidenceActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ToPlanRegisterActivity"
             android:exported="false" />
         <activity

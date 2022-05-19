@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.queerfy.model.LoginUserModel
 import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
+import com.example.queerfy.view.ResidenceActivity
 import com.example.queerfy.view.AccountActivity
 import com.example.queerfy.view.MyAdsActivity
 import com.example.queerfy.view.MyFavoritesActivity
@@ -24,8 +25,7 @@ class LoginViewModel {
         this.loginUserModel?.let {
             val postLogin = Api.create().loginUser(modelUserLogin)
 
-            val viewFavorites = Intent(context, MyFavoritesActivity::class.java)
-            val viewAccount = Intent(context, AccountActivity::class.java)
+            val residenceActivity = Intent(context, ResidenceActivity::class.java)
 
             postLogin.enqueue(object: Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -36,7 +36,7 @@ class LoginViewModel {
                         editPreferences.putInt("idUser", response.body()?.id as Int)
                         editPreferences.commit()
 
-                        context.startActivity(viewAccount)
+                        context.startActivity(residenceActivity)
 
                     }else {
                         Toast(context).showCustomToast("Email ou Senha Incorreto!", context as Activity)
