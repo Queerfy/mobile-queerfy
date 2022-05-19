@@ -108,7 +108,31 @@ class UrgencyRegisterActivity : AppCompatActivity() {
     }
 
     private fun validateFields(): Boolean {
-        // TODO Validar todos os campos (Botão Finalizar)
+        if (this.binding.edtName.toString().isEmpty()) {
+            this.binding.edtName.error = "Nome Invalido!"
+            return false
+        }
+
+        if (this.binding.edtCpf.toString().isEmpty()) {
+            this.binding.edtCpf.error = "CPF Invalido!"
+            return false
+        }
+
+        if (this.binding.edtEmail.toString().isEmpty()) {
+            this.binding.edtEmail.error = "Email Invalido!"
+            return false
+        }
+
+        if (this.binding.edtPhone.toString().isEmpty()) {
+            this.binding.edtPhone.error = "Telefone Invalido!"
+            return false
+        }
+
+        if (this.binding.edtPassword.text.toString().isEmpty()) {
+            this.binding.edtPassword.error = "Senha Invalida!"
+            return false
+        }
+
         return true
     }
 
@@ -116,19 +140,17 @@ class UrgencyRegisterActivity : AppCompatActivity() {
         urgencyRegisterViewModel.urgencyRegisterModel =
             UrgencyRegisterModel(
                 name = this.binding.edtName.text.toString(),
-                sexOrientation = urgencyRegisterViewModel.sexOrientationEnum,
-                genderIdentity = urgencyRegisterViewModel.genderIdentityEnum,
+                sexOrientation =  urgencyRegisterViewModel.sexOrientationEnum,
+                genre =  urgencyRegisterViewModel.genderIdentityEnum,
                 cpf = this.binding.edtCpf.text.toString()
                     .replace(".", "")
                     .replace("-", "")
                     .trim(),
                 email = this.binding.edtEmail.text.toString(),
                 phone = this.binding.edtPhone.text.toString()
-                    .replace("(", "")
-                    .replace(")", "")
-                    .replace("-", "")
-                    .replace(" ", "")
-                    .trim()
+                    .replace(")","")
+                    .replace("-","")
+                    .replace(" ","")
+                    .trim(),
+                password = this.binding.edtPassword.text.toString()
             )
-    }
-}

@@ -90,7 +90,7 @@
     <EditText
         android:id="@+id/edit_senha"
         style="@style/InputLogin"
-        android:hint="Senha"
+        android:hint="@string/hint_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
