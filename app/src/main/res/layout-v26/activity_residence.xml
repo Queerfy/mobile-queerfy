@@ -190,6 +190,7 @@
 
                     <EditText
                         style="@style/dateEditText"
+                        android:layout_marginHorizontal="5dp"
                         android:layout_weight="1"
                         android:drawableTint="@color/border_dark"
                         android:hint="@string/date_edit_text_hint"
@@ -197,8 +198,16 @@
                         android:inputType="date"
                         android:paddingHorizontal="10dp"
                         android:textSize="13sp"
-                        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck"
-                        tools:targetApi="m" />
+                        tools:ignore="TextContrastCheck"
+                        tools:targetApi="m"
+                        android:id="@+id/date_checkin"/>
+
+                    <DatePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:tooltipText="Check-in"
+                        android:id="@+id/dp_data_checkin"/>
 
                     <EditText
                         style="@style/dateEditText"
@@ -211,7 +220,17 @@
                         android:paddingHorizontal="10dp"
                         android:textSize="13sp"
                         tools:ignore="TextContrastCheck"
-                        tools:targetApi="m" />
+                        tools:targetApi="m"
+                        android:id="@+id/date_checkout"
+                        />
+
+                    <DatePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:tooltipText="Check-in"
+                        android:id="@+id/dp_data_checkout"
+                        />
 
                     <Button
                         android:layout_width="wrap_content"
