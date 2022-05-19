@@ -20,7 +20,6 @@ class UrgencyRegisterViewModel {
     var sexOrientationEnum = SexOrientationEnum.SELECT
     var genderIdentityEnum = GenderIdentityEnum.SELECT
 
-    //TODO Criar função para enviar informações do urgencyRegisterModel para o banco
     fun putIntoBd(urgencyRegister: UrgencyRegisterModel, context: Context) {
         this.urgencyRegisterModel?.let {
             val postUrgency = Api.create().registerUrgency(urgencyRegister)

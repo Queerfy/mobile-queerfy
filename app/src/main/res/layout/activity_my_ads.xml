@@ -4,27 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MyAdsActivity"
-    android:background="@color/gray_light"
-    >
+    android:background="@color/background_light"
+    tools:context=".view.MyAdsActivity">
+
     <LinearLayout
-        android:id="@+id/ll_ads_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/text_title"
-            android:textSize="40sp"
-            android:textColor="#A993F5"
-            android:text="Meus anúncios"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
             android:layout_marginLeft="20dp"

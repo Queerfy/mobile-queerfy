@@ -16,7 +16,7 @@ import com.example.queerfy.services.Api
 import retrofit2.Call
 import retrofit2.Response
 
-class MyAdsActivity: AppCompatActivity() {
+class MyAdsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyAdsBinding
     private lateinit var recyclerView: RecyclerView
 

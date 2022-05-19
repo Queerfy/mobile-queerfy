@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_light"
     android:orientation="vertical"
     tools:context=".view.RegisterChooseActivity">
 
@@ -10,84 +11,84 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="40dp"
         android:text="@string/title_host_your_home"
+        android:textAlignment="center"
         android:textColor="@color/red"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="25dp"/>
+        android:textStyle="bold" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
         android:background="@color/border_dark" />
 
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txtTitleResidence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_which_filters_fit"
-            android:textColor="@color/red"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="25dp"/>
+            android:text="@string/title_which_filters_fit"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
             android:text="@string/wifi"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp" />
+            android:textStyle="bold" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
             android:text="@string/kitchen"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp" />
+            android:textStyle="bold" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
             android:text="@string/garage"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp" />
+            android:textStyle="bold" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
             android:text="@string/animals"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp" />
+            android:textStyle="bold" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
             android:text="@string/suite"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp" />
+            android:textStyle="bold" />
 
     </RadioGroup>
 
@@ -95,13 +96,13 @@
         android:id="@+id/btnStep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/following"
-        android:background="@drawable/shape_register_button"
-        android:backgroundTint="@color/red"
-        android:layout_marginTop="40dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="40dp"
-        android:textColor="@color/white"/>
+        android:background="@drawable/shape_register_button"
+        android:backgroundTint="@color/red"
+        android:text="@string/following"
+        android:textColor="@color/white" />
 
 </LinearLayout>

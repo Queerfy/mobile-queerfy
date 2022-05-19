@@ -4,35 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/background_light"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".view.RegisterChooseActivity">
 
     <TextView
         android:id="@+id/txtText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="@string/need_rent"
+        android:textAlignment="center"
         android:textColor="@color/red"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginTop="40dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/rent_level"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_marginTop="20dp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
         android:background="@color/border_dark" />
 
@@ -40,28 +41,28 @@
         android:id="@+id/btnUrgency"
         android:layout_width="190dp"
         android:layout_height="150dp"
-        android:drawableBottom="@drawable/ic_alert"
-        android:text="@string/urgency"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
+        android:layout_marginTop="40dp"
         android:background="@drawable/shape_register_button"
         android:backgroundTint="@color/red"
+        android:drawableBottom="@drawable/ic_alert"
         android:padding="20dp"
-        android:layout_marginTop="40dp" />
+        android:text="@string/urgency"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnPlan"
         android:layout_width="190dp"
         android:layout_height="150dp"
-        android:drawableBottom="@drawable/ic_sunset"
-        android:text="@string/plan"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
         android:background="@drawable/shape_register_button"
         android:backgroundTint="@color/orange"
+        android:drawableBottom="@drawable/ic_sunset"
         android:padding="20dp"
-        android:layout_marginTop="60dp" />
+        android:text="@string/plan"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

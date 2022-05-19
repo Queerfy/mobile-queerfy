@@ -36,7 +36,7 @@ interface Api {
         // Trocar para o ip local da maquina
         var url = "http://192.168.0.51:8080/"
 
-        fun create(): Api{
+        fun create(): Api {
             var retrofit = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(url)

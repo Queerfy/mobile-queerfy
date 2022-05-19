@@ -20,7 +20,6 @@ class ToPlanRegisterViewModel {
     var sexOrientationEnum = SexOrientationEnum.SELECT
     var genderIdentityEnum = GenderIdentityEnum.SELECT
 
-    //TODO Criar função para enviar informações do urgencyRegisterModel para o banco
     fun putIntoBd(toPlanRegisterModel: ToPlanRegisterModel, context: Context) {
         this.toPlanRegisterModel?.let {
             val postToPlan = Api.create().registerToPlan(toPlanRegisterModel)

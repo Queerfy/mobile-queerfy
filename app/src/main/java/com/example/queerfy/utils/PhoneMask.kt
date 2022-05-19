@@ -32,7 +32,6 @@ class PhoneMask(weakEditText: WeakReference<EditText?>) :
         s: CharSequence, start: Int, before: Int,
         count: Int
     ) {
-        // TODO: Do nothing
     }
 
     override fun afterTextChanged(s: Editable) {

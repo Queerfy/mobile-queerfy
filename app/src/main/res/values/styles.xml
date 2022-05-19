@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="ContainerHeader">
         <item name="android:layout_width">350dp</item>
         <item name="android:layout_height">60dp</item>

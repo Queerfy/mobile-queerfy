@@ -23,7 +23,7 @@ import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
 
-class MyFavoritesActivity: AppCompatActivity() {
+class MyFavoritesActivity : AppCompatActivity() {
     private lateinit var binding: ActivivityMyFavoritesBinding
     private lateinit var recyclerView: RecyclerView
 

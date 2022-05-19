@@ -4,30 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MyFavoritesActivity"
-    android:background="@color/gray_light"
-    >
+    android:background="@color/background_light"
+    tools:context=".view.MyFavoritesActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/text_title"
-            android:textSize="40sp"
-            android:textColor="@color/pink"
-            android:text="Meus favoritos"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
-            />
+            android:text="Meus favoritos"
+            android:textColor="@color/pink"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favoritesRecyclerView"
