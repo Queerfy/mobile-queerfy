@@ -34,7 +34,9 @@ class MyAdsActivity : AppCompatActivity() {
     }
 
     fun listMyAds() {
-        val idUser = intent.getIntExtra("id", 0)
+        val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
+
+        val idUser = preferences.getInt("idUser", 0)
 
         val getProperties = Api.create().getProperties()
 

@@ -5,10 +5,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface Api {
     @POST("users")
@@ -31,9 +28,6 @@ interface Api {
 
     @POST("users/autenticate")
     fun loginUser(@Body userLogin: LoginUserModel): Call<User>
-
-    @GET("properties/{id}")
-    fun  getProperty(@Path("id") id: Int): Call<Property>
 
     @POST("favorites")
     fun createFavorite(@Body newFavorite: NewFavorite): Call<Void>

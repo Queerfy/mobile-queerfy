@@ -140,17 +140,19 @@ class UrgencyRegisterActivity : AppCompatActivity() {
         urgencyRegisterViewModel.urgencyRegisterModel =
             UrgencyRegisterModel(
                 name = this.binding.edtName.text.toString(),
-                sexOrientation =  urgencyRegisterViewModel.sexOrientationEnum,
-                genre =  urgencyRegisterViewModel.genderIdentityEnum,
+                sexOrientation = urgencyRegisterViewModel.sexOrientationEnum,
+                genre = urgencyRegisterViewModel.genderIdentityEnum,
                 cpf = this.binding.edtCpf.text.toString()
                     .replace(".", "")
                     .replace("-", "")
                     .trim(),
                 email = this.binding.edtEmail.text.toString(),
                 phone = this.binding.edtPhone.text.toString()
-                    .replace(")","")
-                    .replace("-","")
-                    .replace(" ","")
+                    .replace(")", "")
+                    .replace("-", "")
+                    .replace(" ", "")
                     .trim(),
                 password = this.binding.edtPassword.text.toString()
             )
+    }
+}
