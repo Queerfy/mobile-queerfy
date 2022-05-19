@@ -5,7 +5,7 @@ enum class GenderIdentityEnum(val genderIdentityName: String, val id: Int) {
     MAN("Homem", 1),
     WOMAM("Mulher", 2),
     NON_BINARY("Não-binário", 3),
-    DO_NOT_INFORM("Não informar",4 );
+    DO_NOT_INFORM("Não informar", 4);
 
     companion object {
         fun toList(): List<String> = values().map { it.genderIdentityName }

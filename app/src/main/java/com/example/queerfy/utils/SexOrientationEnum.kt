@@ -5,7 +5,7 @@ enum class SexOrientationEnum(val sexualOrientationName: String, val id: Int) {
     HETEROSEXUAL("Heterossexual", 1),
     GAY("Homossexual", 2),
     BISEXUAL("Bissexual", 3),
-    DO_NOT_INFORM("Não informar",4 );
+    DO_NOT_INFORM("Não informar", 4);
 
     companion object {
         fun toList(): List<String> = values().map { it.sexualOrientationName }
