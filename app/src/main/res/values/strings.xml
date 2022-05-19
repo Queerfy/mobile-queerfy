@@ -106,4 +106,21 @@
     <string name="address">Cerqueira César - CEP: 01414-001</string>
     <string name="sp">São Paulo - SP</string>
     <string name="exit">Sair</string>
+    <string name="confirmation_title">Confirme sua reserva</string>
+    <string name="confirmation_address_subtitle">Local</string>
+    <string name="confirmation_address">Casa - 1 quarto disponível</string>
+    <string name="confirmation_address_location">SP - Alphaville</string>
+    <string name="confirmation_address_characteristics">4 hóspedes - 1 quarto - 3 camas - 1 banheiro</string>
+    <string name="confirmation_check_in_title">Check-in:</string>
+    <string name="confirmation_check_in_date">05/09/2022</string>
+    <string name="confirmation_check_out_title">Check-out:</string>
+    <string name="confirmation_check_out_date">15/09/2022</string>
+    <string name="confirmation_values_title">Valores</string>
+    <string name="confirmation_total_nights">4</string>
+    <string name="confirmation_total_nights_label">diárias:</string>
+    <string name="confirmation_total_nights_value">R$ 240,00</string>
+    <string name="confirmation_service_tax_label">Taxa de serviço:</string>
+    <string name="confirmation_service_tax_value">R$ 40,00</string>
+    <string name="confirmation_total_label">Total:</string>
+    <string name="confirmation_submit_button">Confirmar e pagar</string>
 </resources>
