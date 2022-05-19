@@ -6,7 +6,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.queerfy.R
 import com.example.queerfy.databinding.ActivityToplanRegisterBinding
+import com.example.queerfy.databinding.FragmentMyFavoritesBinding
 import com.example.queerfy.model.ToPlanRegisterModel
 import com.example.queerfy.model.UrgencyRegisterModel
 import com.example.queerfy.utils.*

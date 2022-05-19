@@ -22,6 +22,18 @@
             android:name=".view.RegisterChooseActivity"
             android:exported="false" />
         <activity
+            android:name=".view.MyFavoritesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MyAdsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MyReservationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.LoginFormActivity"
             android:exported="true">
             <intent-filter>
