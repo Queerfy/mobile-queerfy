@@ -26,6 +26,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/residence_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -34,6 +35,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/uf_residence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -43,6 +45,7 @@
         app:drawableTint="@color/font" />
 
     <TextView
+        android:id="@+id/details_residence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -69,6 +72,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/checkin_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -90,6 +94,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/checkout_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"

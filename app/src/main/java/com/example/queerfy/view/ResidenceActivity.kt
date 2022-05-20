@@ -1,5 +1,6 @@
 package com.example.queerfy.view
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +19,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 import java.util.concurrent.TimeUnit
 import java.util.function.Predicate
 import kotlin.streams.toList
@@ -25,9 +27,11 @@ import kotlin.time.Duration
 
 class ResidenceActivity : AppCompatActivity() {
 
-    val houseId = 48
+    val houseId = 38
     var likedResidence: Boolean = false
     var dailyPrice = 0.0
+    var total = 0.0
+    var diff = 0
 
     lateinit var datachekin: LocalDate
     lateinit var datachekout: LocalDate
@@ -53,6 +57,10 @@ class ResidenceActivity : AppCompatActivity() {
 
                 datachekin = LocalDate.parse(data, DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 
+//                if (datachekin.dayOfWeek()) {
+//                    Toast.makeText(this@ResidenceActivity, "Data Invalida!", Toast.LENGTH_SHORT).show()
+//                }
+
                 datePicker.visibility = GONE
                 it.visibility = VISIBLE
             }
@@ -70,15 +78,15 @@ class ResidenceActivity : AppCompatActivity() {
                 (it as EditText).setText(data)
                 datachekout = LocalDate.parse(data, DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 
-                val diff = datachekout.compareTo(datachekin)
-
-                var newTotal = dailyPrice * diff
+                diff = datachekout.compareTo(datachekin)
 
                 if (diff < 0) {
                     Toast.makeText(this@ResidenceActivity, "Data Invalida!", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    findViewById<TextView>(R.id.booking_total_daily_price).text = "R$ ${newTotal}"
+                    total = dailyPrice * diff
+
+                    findViewById<TextView>(R.id.booking_total_daily_price).text = "R$ ${"%,.2f".format(total)}"
                 }
 
                 datePicker.visibility = GONE
@@ -96,6 +104,8 @@ class ResidenceActivity : AppCompatActivity() {
     }
 
     fun getHouse() {
+        val confirmationActivity = Intent(this@ResidenceActivity, ConfirmationActivity::class.java)
+
         // Aqui vai o id da casa dinamicamente
         val getProperty = Api.create().getProperty(houseId)
 
@@ -123,11 +133,11 @@ class ResidenceActivity : AppCompatActivity() {
                     val haveAnimals = response.body()?.haveAnimals
 
                     val residenceTitle = "${propertyType} - ${roomQuantity} quarto(s) disponiveis"
+                    val residenteDetails = "${guestsQuantity} hóspedes - ${roomQuantity} quarto - ${bedsQuantity} camas - ${bathroomQuantity} banheiro"
 
                     findViewById<TextView>(R.id.residence_title).text = residenceTitle
                     findViewById<TextView>(R.id.description_text).text = description
-                    findViewById<TextView>(R.id.description_details).text =
-                        "${guestsQuantity} hóspedes - ${roomQuantity} quarto - ${bedsQuantity} camas - ${bathroomQuantity} banheiro"
+                    findViewById<TextView>(R.id.description_details).text = residenteDetails
                     findViewById<TextView>(R.id.booking_daily_price).text = "R$ ${dailyPrice}"
                     findViewById<TextView>(R.id.booking_total_daily_price).text = "R$ ${dailyPrice}"
                     findViewById<TextView>(R.id.residence_location).text = uf
@@ -155,11 +165,25 @@ class ResidenceActivity : AppCompatActivity() {
                     val getOwner = Api.create().getUser(idOwner as Int)
 
                     getOwner.enqueue(object : Callback<User> {
+                        @RequiresApi(Build.VERSION_CODES.O)
                         override fun onResponse(call: Call<User>, response: Response<User>) {
                             if (response.isSuccessful) {
                                 val nameOwner = response.body()?.name
 
                                 findViewById<TextView>(R.id.owner_residence).text = nameOwner
+
+                                findViewById<Button>(R.id.button_confirm).setOnClickListener { it ->
+                                    confirmationActivity.putExtra("residenceTitle", residenceTitle)
+                                    confirmationActivity.putExtra("residenteDetails", residenteDetails)
+                                    confirmationActivity.putExtra("uf", uf)
+                                    confirmationActivity.putExtra("datachekin", datachekin)
+                                    confirmationActivity.putExtra("datachekout", datachekout)
+                                    confirmationActivity.putExtra("dailyPrice", dailyPrice)
+                                    confirmationActivity.putExtra("dailys", diff)
+                                    confirmationActivity.putExtra("total", total)
+
+                                    startActivity(confirmationActivity)
+                                }
                             }
                         }
 
@@ -306,4 +330,5 @@ class ResidenceActivity : AppCompatActivity() {
             }
         })
     }
+
 }

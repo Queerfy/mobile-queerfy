@@ -51,13 +51,7 @@
             android:name=".view.LoginFormActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MyFavoritesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.MyReservationsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.MyAdsActivity"
+            android:name=".view.ConfirmationActivity"
             android:exported="false" />
     </application>
 
