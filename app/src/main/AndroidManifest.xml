@@ -25,6 +25,7 @@
         </activity>
         <activity
             android:name=".view.ResidenceActivity"
+            android:name=".view.ResidenceListActivity"
             android:exported="false" />
         <activity
             android:name=".view.ToPlanRegisterActivity"
