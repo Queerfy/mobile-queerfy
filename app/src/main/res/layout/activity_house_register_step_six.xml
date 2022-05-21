@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_light"
     android:orientation="vertical"
-    tools:context=".view.RegisterChooseActivity">
+    tools:context=".view.residenceRegister.ResidenceRegisterStepSixActivity">
 
     <TextView
         android:id="@+id/txtTitle"
@@ -63,7 +63,9 @@
             android:text="@string/upload_photos"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="selectedImage"
+            />
 
         <Button
             android:id="@+id/btnFinish"

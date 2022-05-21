@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_light"
     android:orientation="vertical"
-    tools:context=".view.RegisterChooseActivity">
+    tools:context=".view.residenceRegister.ResidenceRegisterStepTwoActivity">
 
     <TextView
         android:id="@+id/txtTitle"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
-        android:text="@string/title_host_your_home"
+        android:hint="@string/title_host_your_home"
         android:textAlignment="center"
         android:textColor="@color/red"
         android:textSize="24sp"
@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_address"
+            android:hint="@string/title_address"
             android:textColor="@color/red"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_register_edit_text"
             android:hint="@string/hint_complement"
-            android:inputType="phone"
+            android:inputType="text"
             android:padding="10dp"
             android:textSize="16sp" />
 
@@ -163,7 +163,9 @@
             android:background="@drawable/shape_register_button"
             android:backgroundTint="@color/red"
             android:text="@string/following"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:onClick="advancedThreeStep"
+            />
     </LinearLayout>
 
 </LinearLayout>
