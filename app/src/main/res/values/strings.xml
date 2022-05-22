@@ -33,7 +33,8 @@
     <string name="title_address">Endereço</string>
     <string name="whole_place">Lugar inteiro</string>
     <string name="whole_room">Quarto inteiro</string>
-    <string name="shared_room">Quarto comaprtilhado</string>
+    <string name="shared_room">Quarto compartilhado</string>
+    <string name="home_shared_room">Compartilhado</string>
     <string name="street">Rua / Logradouro</string>
     <string name="hint_street">Rua dos Laranjeiras</string>
     <string name="city">Cidade</string>
@@ -80,4 +81,11 @@
     <string name="address">Cerqueira César - CEP: 01414-001</string>
     <string name="sp">São Paulo - SP</string>
     <string name="exit">Sair</string>
+    <string name="text_home">Ainda não \n tem uma conta?</string>
+    <string name="sign_up">Cadastre-se</string>
+    <string name="accommodation">Qual tipo de acomodação \nvocê precisa?</string>
+    <string name="share_house">Hospede sua casa e ajude alguém</string>
+    <string name="host">Hospedar</string>
+    <string name="earn_money">Ganhe dinheiro \ne ajude a comunidade</string>
+    <string name="places_to_rent">Locais para alugar de acordo \ncom sua região</string>
 </resources>
