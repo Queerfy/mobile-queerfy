@@ -78,7 +78,9 @@
             android:background="@drawable/shape_register_button"
             android:backgroundTint="@color/red"
             android:text="@string/finish"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:onClick="createResidence"
+            />
     </LinearLayout>
 
 </LinearLayout>

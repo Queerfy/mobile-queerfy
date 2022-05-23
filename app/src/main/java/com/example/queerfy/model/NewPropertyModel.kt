@@ -1,7 +1,6 @@
 package com.example.queerfy.model
 
-data class Property(
-    val id: Int?,
+data class NewPropertyModel(
     val name: String?,
     val active: Boolean?,
     val dailyPrice: Double?,

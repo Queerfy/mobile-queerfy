@@ -4,7 +4,6 @@ import com.example.queerfy.model.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import retrofit2.http.*
 
 interface Api {
@@ -19,6 +18,9 @@ interface Api {
 
     @GET("users/{id}")
     fun getUser(@Path("id") id: Int): Call<User>
+
+    @POST("properties")
+    fun createProperty(@Body propertyModel: NewPropertyModel): Call<Void>
 
     @GET("properties")
     fun getProperties(): Call<List<Property>>

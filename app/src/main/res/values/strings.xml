@@ -59,7 +59,11 @@
     <string name="hint_street">Rua dos Laranjeiras</string>
     <string name="city">Cidade</string>
     <string name="hint_city">São Paulo</string>
+    <string name="uf_house">UF</string>
+    <string name="hint_uf">SP</string>
     <string name="cep">CEP</string>
+    <string name="number_house">Numero</string>
+    <string name="hint_number">200</string>
     <string name="hint_cep">_____-___</string>
     <string name="district">Bairro</string>
     <string name="hint_district">Parque Terra Nova</string>

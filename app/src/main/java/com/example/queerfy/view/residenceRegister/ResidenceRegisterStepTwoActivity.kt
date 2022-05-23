@@ -27,7 +27,9 @@ class ResidenceRegisterStepTwoActivity: AppCompatActivity() {
     fun advancedThreeStep(v: View) {
         val street = findViewById<EditText>(R.id.edtStreet).text.toString()
         val city = findViewById<EditText>(R.id.edtCity).text.toString()
+        val uf = findViewById<EditText>(R.id.edtUf).text.toString()
         val cep = findViewById<EditText>(R.id.edtCep).text.toString()
+        val number = findViewById<EditText>(R.id.edtNumber).text.toString()
         val district = findViewById<EditText>(R.id.edtDistrict).text.toString()
         val complement = findViewById<EditText>(R.id.edtComplement).text.toString()
         val referencePoint = findViewById<EditText>(R.id.edtReferencePoints).text.toString()
@@ -44,8 +46,18 @@ class ResidenceRegisterStepTwoActivity: AppCompatActivity() {
             return
         }
 
+        if (uf.isEmpty()) {
+            Toast.makeText(this@ResidenceRegisterStepTwoActivity, "UF Invalido!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         if (cep.isEmpty()) {
             Toast.makeText(this@ResidenceRegisterStepTwoActivity, "Cep Invalido!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (number.isEmpty()) {
+            Toast.makeText(this@ResidenceRegisterStepTwoActivity, "Número Invalido!", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -67,7 +79,9 @@ class ResidenceRegisterStepTwoActivity: AppCompatActivity() {
         val editResidenceRegister = residenceRegister.edit()
         editResidenceRegister.putString("street", street)
         editResidenceRegister.putString("city", city)
+        editResidenceRegister.putString("uf", uf)
         editResidenceRegister.putString("cep", cep)
+        editResidenceRegister.putString("number", number)
         editResidenceRegister.putString("district", district)
         editResidenceRegister.putString("complement", complement)
         editResidenceRegister.putString("referencePoint", referencePoint)

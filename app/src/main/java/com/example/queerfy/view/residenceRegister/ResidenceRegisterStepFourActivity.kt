@@ -76,7 +76,6 @@ class ResidenceRegisterStepFourActivity: AppCompatActivity() {
         editResidenceRegister.putBoolean("haveWifi",haveWifi)
         editResidenceRegister.putBoolean("haveChicken",haveChicken)
         editResidenceRegister.putBoolean("haveGarage",haveGarage)
-        editResidenceRegister.putBoolean("haveChicken",haveChicken)
         editResidenceRegister.putBoolean("haveAnimals",haveAnimals)
         editResidenceRegister.putBoolean("haveSuite",haveSuite)
         editResidenceRegister.commit()
