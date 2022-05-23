@@ -74,40 +74,83 @@
                 android:padding="10dp"
                 app:layout_constraintTop_toBottomOf="@+id/txtAccommodation">
 
-                <Button
-                    android:id="@+id/imgRoom"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/img_whole_room"
-                    android:layout_weight="1"
-                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical"
                     android:layout_marginEnd="10dp"
-                    android:text="@string/whole_room"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:layout_weight="1">
 
-                <Button
-                    android:id="@+id/imgShared"
+                    <ImageButton
+                        android:id="@+id/imgRoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_whole_room"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/whole_room"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="@id/imgRoom"
+                        app:layout_constraintStart_toStartOf="@id/imgRoom"
+                        app:layout_constraintEnd_toEndOf="@id/imgRoom" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/img_shared"
-                    android:layout_weight="1"
-                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical"
                     android:layout_marginEnd="10dp"
-                    android:text="@string/home_shared_room"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:layout_weight="1">
 
-                <Button
-                    android:id="@+id/imgWhole"
+                    <ImageButton
+                        android:id="@+id/imgShared"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_shared"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_shared_room"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="@id/imgShared"
+                        app:layout_constraintStart_toStartOf="@id/imgShared"
+                        app:layout_constraintEnd_toEndOf="@id/imgShared" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/img_room"
-                    android:layout_weight="1"
-                    android:gravity="bottom|center_horizontal"
-                    android:text="@string/whole_place"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:orientation="vertical"
+
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/imgWhole"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_room"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/whole_place"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="@id/imgWhole"
+                        app:layout_constraintStart_toStartOf="@id/imgWhole"
+                        app:layout_constraintEnd_toEndOf="@id/imgWhole" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
 

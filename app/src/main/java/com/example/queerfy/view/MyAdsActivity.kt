@@ -12,5 +12,4 @@ class MyAdsActivity : AppCompatActivity() {
         this.binding = ActivityMyAdsBinding.inflate(layoutInflater)
         setContentView(this.binding.root)
     }
-
 }

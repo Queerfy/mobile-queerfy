@@ -15,7 +15,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/border_dark"
             app:popupTheme="@style/Theme.Queerfy.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
