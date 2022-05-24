@@ -24,6 +24,8 @@ class LoginViewModel {
 
             val residenceActivity = Intent(context, ResidenceActivity::class.java)
             val residenceRegister = Intent(context, ResidenceRegisterStepOneActivity::class.java)
+            val accountActivity = Intent(context, AccountActivity::class.java)
+            val homePage = Intent(context, NavigationDrawerActivity::class.java)
 
             postLogin.enqueue(object: Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -34,7 +36,7 @@ class LoginViewModel {
                         editPreferences.putInt("idUser", response.body()?.id as Int)
                         editPreferences.commit()
 
-                        context.startActivity(residenceRegister)
+                        context.startActivity(accountActivity)
 
                     }else {
                         Toast(context).showCustomToast("Email ou Senha Incorreto!", context as Activity)

@@ -4,6 +4,8 @@ package com.example.queerfy.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +14,7 @@ import com.example.queerfy.model.Favorite
 import com.example.queerfy.model.Property
 import com.example.queerfy.services.Api
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 
@@ -47,6 +50,27 @@ class MyFavoritesFragment(
                 if (response.isSuccessful) {
                     val descAd = "${response.body()?.propertyType} - ${response.body()?.roomQuantity} quarto(s) disponivel"
                     holder.itemView.findViewById<TextView>(R.id.property_name).text = descAd
+
+                    holder.itemView.findViewById<ImageView>(R.id.icon_favorite).setOnClickListener{
+
+                        val deleteFavorite = Api.create().deleteFavorite(myAd.id as Int)
+
+                        deleteFavorite.enqueue(object: Callback<Void>{
+                            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+
+                                holder.itemView.findViewById<LinearLayout>(R.id.ll_myfavorites).visibility = View.GONE
+
+                                Toast.makeText(holder.itemView.context, "Deletado com sucesso!", Toast.LENGTH_SHORT).show()
+                            }
+
+                            override fun onFailure(call: Call<Void>, t: Throwable) {
+                                Toast.makeText(holder.itemView.context, "Erro ao deletar!", Toast.LENGTH_SHORT).show()
+                            }
+
+                        })
+
+                    }
+
                 }
 
             }

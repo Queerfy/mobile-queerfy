@@ -22,7 +22,8 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
     private val residenceRegisterViewModel = ResidenceRegisterViewModel()
 
     val REQUEST_CODE = 200
-    var imageUri: Uri? = null
+
+    lateinit var imagesUri: ArrayList<Uri>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,8 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
         setContentView(this.binding.root)
 
         residenceRegister = getSharedPreferences("residenceRegister", MODE_PRIVATE)
+
+        imagesUri = ArrayList()
     }
 
     fun selectedImage(v: View) {
@@ -62,15 +65,15 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
                 var count = data.clipData?.itemCount
 
                 for (i in 0..count!! - 1) {
-                    imageUri =  data.clipData?.getItemAt(i)!!.uri
+                    imagesUri.add(data.clipData?.getItemAt(i)!!.uri)
 
-                    println(imageUri)
+                    // println(imagesUri.size)
                 }
             }else if(data?.data != null) {
                 // if single image is selected
-                imageUri = data.data!!
+                imagesUri.add(data.data!!)
 
-                println(imageUri)
+                // println(imageUri)
             }
         }
     }
@@ -105,7 +108,7 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
         val propertyType = residenceRegister.getString("propertyType", "")
         val spaceType = residenceRegister.getString("spaceType", "")
         val street = residenceRegister.getString("street", "")
-        val city = residenceRegister.getString("city", "").toString().replace(("[^\\w]").toRegex(), "").lowercase()
+        val city = residenceRegister.getString("city", "").toString().lowercase()
         val uf = residenceRegister.getString("uf", "").toString().uppercase()
         val cep = residenceRegister.getString("cep", "")
         val number = residenceRegister.getString("number", "")
@@ -162,7 +165,7 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
         )
 
         residenceRegisterViewModel.newPropertyModel?.let { it1 ->
-            residenceRegisterViewModel.putIntoBd(it1, this)
+            residenceRegisterViewModel.putIntoBd(it1, imagesUri, this)
         }
 
 

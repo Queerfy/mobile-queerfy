@@ -3,6 +3,8 @@ package com.example.queerfy.view
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +12,7 @@ import com.example.queerfy.R
 import com.example.queerfy.databinding.AccountActivityBinding
 import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
+import com.example.queerfy.utils.GenderIdentityEnum
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,6 +21,8 @@ class AccountActivity: AppCompatActivity() {
 
     private lateinit var binding: AccountActivityBinding
     lateinit var userPreferences: SharedPreferences
+
+    var genderIdentityEnum = GenderIdentityEnum.SELECT
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +44,13 @@ class AccountActivity: AppCompatActivity() {
                     val cpf = response.body()?.cpf
                     val email = response.body()?.email
                     val password = response.body()?.password
+                    val genre = response.body()?.genre
 
-                    binding.edtName.hint = name
-                    binding.edtCpf.hint = cpf
-                    binding.edtEmail.hint = email
-                    binding.edtPassword.hint = password
+                    binding.edtName.setText(name)
+                    binding.edtCpf.setText(cpf)
+                    binding.edtEmail.setText(email)
+                    binding.edtPassword.setText(password)
+                    // binding.spnGenderIdentity.setSelection(1)
                 }
             }
 
@@ -54,5 +61,38 @@ class AccountActivity: AppCompatActivity() {
 
         })
 
+        setupGenderIdentitySpinner()
+
+        println(genderIdentityEnum.name)
+
     }
+
+    private fun setupGenderIdentitySpinner() {
+        val options = GenderIdentityEnum.toList()
+        this.binding.spnGenderIdentity.adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_list_item_1,
+            options
+        )
+
+        this.binding.spnGenderIdentity.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    genderIdentityEnum = GenderIdentityEnum.fromId(position) ?: GenderIdentityEnum.SELECT
+                }
+
+            }
+    }
+
+    private fun updateAccount(v: View) {
+        // Colocar a função que vai enviar todos os dados aqui
+    }
+
 }
