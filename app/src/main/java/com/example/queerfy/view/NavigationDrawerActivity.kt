@@ -3,9 +3,13 @@ package com.example.queerfy.view
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import android.view.MenuItem.OnActionExpandListener
+import android.widget.ArrayAdapter
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -24,6 +28,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityNavigationDrawerBinding
     private lateinit var userPreferences: SharedPreferences
+
+    val arrayList = listOf("São Paulo", "Rio de Janeiro")
+    lateinit var arrayAdapter: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -123,11 +130,34 @@ class NavigationDrawerActivity : AppCompatActivity() {
             false
         }
 
+        this.arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList)
+//        this.binding.listView.adapter = this.arrayAdapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.navigation_drawer, menu)
-        return true
+
+        val search = menu.findItem(R.id.action_search)
+        val editSearch = search.actionView as SearchView
+        search.collapseActionView()
+        editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                Log.d("Teste: ", "Escolheu")
+                search.collapseActionView()
+                search.expandActionView()
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Log.d("Teste: ", "Digitando...")
+                search.expandActionView()
+                arrayAdapter.filter.filter(newText)
+                return false
+            }
+
+        })
+
+            return true
     }
 
     override fun onSupportNavigateUp(): Boolean {

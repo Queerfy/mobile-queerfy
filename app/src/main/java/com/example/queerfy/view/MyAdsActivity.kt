@@ -68,5 +68,4 @@ class MyAdsActivity : AppCompatActivity() {
 
         })
     }
-
 }
