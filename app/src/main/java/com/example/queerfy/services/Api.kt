@@ -21,6 +21,12 @@ interface Api {
     @GET("users/{id}")
     fun getUser(@Path("id") id: Int): Call<User>
 
+    @POST("users/autenticate")
+    fun loginUser(@Body userLogin: LoginUserModel): Call<User>
+
+    @PUT("users/update/{id}")
+    fun updateUser(@Path("id") id: Int, @Body updateUser: UpdateUserModel): Call<User>
+
     @POST("properties")
     fun createProperty(@Body propertyModel: NewPropertyModel): Call<Property>
 
@@ -34,11 +40,8 @@ interface Api {
     fun deleteProperty(@Path("id") id: Int): Call<Void>
 
     @Multipart
-    @PATCH
-    fun uploadImages(@Url url: String, @Part filePart: MultipartBody.Part, @Path("id") id: Int): Call<Void>
-
-    @POST("users/autenticate")
-    fun loginUser(@Body userLogin: LoginUserModel): Call<User>
+    @PATCH("properties/image{index}/{id}")
+    fun uploadImages(@Path("index") index: Int, @Part filePart: MultipartBody.Part, @Path("id") id: Int): Call<Void>
 
     @POST("favorites")
     fun createFavorite(@Body newFavorite: NewFavorite): Call<Void>
@@ -51,8 +54,8 @@ interface Api {
 
     companion object {
         // Trocar para o ip local da maquina
-        var url = "http://192.168.0.51:8080/"
-        //var url = "http://10.18.7.9:8080/"
+        //var url = "http://192.168.0.51:8080/"
+        var url = "http://10.18.7.9:8080/"
 
         fun create(): Api {
             var retrofit = Retrofit.Builder()

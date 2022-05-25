@@ -36,7 +36,7 @@ class LoginViewModel {
                         editPreferences.putInt("idUser", response.body()?.id as Int)
                         editPreferences.commit()
 
-                        context.startActivity(accountActivity)
+                        context.startActivity(homePage)
 
                     }else {
                         Toast(context).showCustomToast("Email ou Senha Incorreto!", context as Activity)

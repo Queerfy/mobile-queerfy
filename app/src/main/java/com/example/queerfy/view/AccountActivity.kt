@@ -10,9 +10,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.queerfy.R
 import com.example.queerfy.databinding.AccountActivityBinding
+import com.example.queerfy.model.UpdateUserModel
 import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
 import com.example.queerfy.utils.GenderIdentityEnum
+import com.example.queerfy.viewModel.AccountViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,6 +23,7 @@ class AccountActivity: AppCompatActivity() {
 
     private lateinit var binding: AccountActivityBinding
     lateinit var userPreferences: SharedPreferences
+    private val accountViewModel = AccountViewModel()
 
     var genderIdentityEnum = GenderIdentityEnum.SELECT
 
@@ -50,7 +53,23 @@ class AccountActivity: AppCompatActivity() {
                     binding.edtCpf.setText(cpf)
                     binding.edtEmail.setText(email)
                     binding.edtPassword.setText(password)
-                    // binding.spnGenderIdentity.setSelection(1)
+
+                    if (genre.toString().equals("Homem")) {
+                        binding.spnGenderIdentity.setSelection(1)
+                    }
+
+                    if (genre.toString().equals("Mulher")) {
+                        binding.spnGenderIdentity.setSelection(2)
+                    }
+
+                    if (genre.toString().equals("Não-binário")) {
+                        binding.spnGenderIdentity.setSelection(3)
+                    }
+
+                    if (genre.toString().equals("Não informar")) {
+                        binding.spnGenderIdentity.setSelection(3)
+                    }
+
                 }
             }
 
@@ -63,7 +82,9 @@ class AccountActivity: AppCompatActivity() {
 
         setupGenderIdentitySpinner()
 
-        println(genderIdentityEnum.name)
+        this.binding.btnFinish.setOnClickListener {
+            updateAccount()
+        }
 
     }
 
@@ -91,8 +112,47 @@ class AccountActivity: AppCompatActivity() {
             }
     }
 
-    private fun updateAccount(v: View) {
-        // Colocar a função que vai enviar todos os dados aqui
+    private fun updateAccount() {
+        val name = binding.edtName.text.toString()
+        val cpf = binding.edtCpf.text.toString()
+        val email = binding.edtEmail.text.toString()
+        val password = binding.edtPassword.text.toString()
+        val genre =  binding.spnGenderIdentity.selectedItem.toString() //Invertido como descUser
+
+        if (name.isEmpty()) {
+            Toast.makeText(this, "Nome Invalido!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if(cpf.isEmpty()) {
+            Toast.makeText(this, "Cpf Invalido!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if(email.isEmpty()) {
+            Toast.makeText(this, "Email Invalido!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if(password.isEmpty()) {
+            Toast.makeText(this, "Senha Invalida!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        accountViewModel.updateUserModel = UpdateUserModel(
+            name = name,
+            cpf = cpf,
+            email = email,
+            password = password,
+            descUser = genre
+        )
+
+        accountViewModel.updateUserModel?.let{it1 ->
+            accountViewModel.putIntoBd(
+                it1, this, userPreferences
+            )
+        }
+
     }
 
 }

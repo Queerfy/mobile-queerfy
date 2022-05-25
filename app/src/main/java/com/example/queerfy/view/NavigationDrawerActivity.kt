@@ -1,7 +1,11 @@
 package com.example.queerfy.view
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -14,16 +18,20 @@ import com.example.queerfy.databinding.ActivityNavigationDrawerBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
+
 class NavigationDrawerActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityNavigationDrawerBinding
+    private lateinit var userPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         this.binding = ActivityNavigationDrawerBinding.inflate(layoutInflater)
         setContentView(this.binding.root)
+
+        userPreferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
 
         setSupportActionBar(this.binding.appBarNavigationDrawer.toolbar)
 
@@ -42,6 +50,79 @@ class NavigationDrawerActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.setNavigationItemSelectedListener { menuItem ->
+
+            val idUser = userPreferences.getInt("idUser", 0)
+
+            val loginPage = Intent(this, LoginFormActivity::class.java)
+
+            when(menuItem.itemId) {
+
+                R.id.nav_home -> {
+                    val homepage = Intent(this, NavigationDrawerActivity::class.java)
+
+                    startActivity(homepage)
+                }
+
+                R.id.myAds -> {
+
+                    if(idUser == 0) {
+                        startActivity(loginPage)
+                    }else {
+                        val adsPage = Intent(this, MyAdsActivity::class.java)
+
+                        startActivity(adsPage)
+                    }
+
+                }
+
+                R.id.myAccount -> {
+
+                    if(idUser == 0) {
+                        startActivity(loginPage)
+                    }else {
+                        val accountPage = Intent(this, AccountActivity::class.java)
+
+                        startActivity(accountPage)
+                    }
+                }
+
+                R.id.myFavorites -> {
+
+                    if(idUser == 0) {
+                        startActivity(loginPage)
+                    }else {
+                        val myFavoritePage = Intent(this, MyFavoritesActivity::class.java)
+
+                        startActivity(myFavoritePage)
+                    }
+
+                }
+
+                R.id.myReservations -> {
+
+                    if(idUser == 0) {
+                        startActivity(loginPage)
+                    }else {
+                        val myReservationsPage = Intent(this, MyReservationsActivity::class.java)
+
+                        startActivity(myReservationsPage)
+                    }
+                }
+
+                R.id.logout_item -> {
+                    if(idUser !== 0) {
+                        userPreferences.edit().remove("idUser").commit()
+
+                        Toast.makeText(this, "Usuario Deslogado!", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+            }
+            false
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single" android:id="@+id/menu">
         <item
             android:title="@string/menu">
 
@@ -26,10 +26,15 @@
                 <item
                     android:id="@+id/toPlanRegister"
                     android:title="@string/notification" />
+<!--                <item-->
+<!--                    android:id="@+id/logout_item"-->
+<!--                    android:title="@string/exit"-->
+<!--                    />-->
             </menu>
         </item>
         <item
-            android:id="@+id/exit"
-            android:title="@string/exit" />
+            android:id="@+id/logout_item"
+            android:title="@string/exit"
+            />
     </group>
 </menu>

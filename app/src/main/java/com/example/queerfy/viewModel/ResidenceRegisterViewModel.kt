@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.widget.Toast
 import androidx.core.net.toFile
 import com.example.queerfy.model.NewPropertyModel
@@ -49,10 +50,11 @@ class ResidenceRegisterViewModel {
 //                            RequestBody.create(MediaType.parse("image/*"), file)
 //                        )
 //
-//                        val postImages = Api.create().uploadImages("/properties/image${index + 1}", filePart, idProperty)
+//                        val postImages = Api.create().uploadImages(index + 1, filePart, idProperty)
 //
 //                        postImages.enqueue(object: Callback<Void> {
 //                            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+//                                Log.w("cadastro-foto", "${response.code()}}")
 //                                Toast(context).showCustomToast("Cadastrado com sucesso!", context as Activity)
 //
 //                                context.startActivity(homeActivity)
@@ -60,7 +62,7 @@ class ResidenceRegisterViewModel {
 //
 //                            override fun onFailure(call: Call<Void>, t: Throwable) {
 //                                println(t.message)
-//
+//                                Log.e("cadastro-foto", t.message!!)
 //                                Toast(context).showCustomToast("Erro ao cadastrar!", context as Activity)
 //                            }
 //
