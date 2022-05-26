@@ -34,6 +34,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
         setContentView(this.binding.root)
 
         setSupportActionBar(this.binding.appBarNavigationDrawer.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         this.binding.appBarNavigationDrawer.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

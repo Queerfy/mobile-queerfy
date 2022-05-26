@@ -18,28 +18,24 @@
             android:id="@+id/imgTwitter"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:drawableBottom="@drawable/ic_menu"
             android:src="@drawable/twitter" />
 
         <ImageButton
             android:id="@+id/imgFacebook"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:drawableBottom="@drawable/ic_menu"
             android:src="@drawable/facebook" />
 
         <ImageButton
             android:id="@+id/imgInstagram"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:drawableBottom="@drawable/ic_menu"
             android:src="@drawable/instagram" />
 
         <ImageButton
             android:id="@+id/imgLinkedin"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:drawableBottom="@drawable/ic_menu"
             android:src="@drawable/linkedin" />
 
     </LinearLayout>
