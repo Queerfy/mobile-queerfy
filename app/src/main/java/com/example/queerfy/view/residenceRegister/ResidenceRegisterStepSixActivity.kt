@@ -15,6 +15,7 @@ import com.example.queerfy.model.NewPropertyModel
 import com.example.queerfy.viewModel.ResidenceRegisterViewModel
 import com.google.android.gms.maps.model.LatLng
 import java.io.IOException
+import java.text.Normalizer
 
 class ResidenceRegisterStepSixActivity: AppCompatActivity() {
     private lateinit var binding: ActivityHouseRegisterStepSixBinding
@@ -101,6 +102,7 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
     }
 
     fun createResidence(v: View) {
+
         val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
 
         val idUser = preferences.getInt("idUser", 0)
@@ -108,7 +110,7 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
         val propertyType = residenceRegister.getString("propertyType", "")
         val spaceType = residenceRegister.getString("spaceType", "")
         val street = residenceRegister.getString("street", "")
-        val city = residenceRegister.getString("city", "").toString().lowercase()
+        val city = residenceRegister.getString("city", "").toString()
         val uf = residenceRegister.getString("uf", "").toString().uppercase()
         val cep = residenceRegister.getString("cep", "")
         val number = residenceRegister.getString("number", "")
@@ -130,6 +132,10 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
 
         val address = "${number} ${street}, ${city}"
 
+        var cityFormated = Normalizer.normalize(city, Normalizer.Form.NFD);
+
+        cityFormated = Regex("\\p{InCombiningDiacriticalMarks}+").replace(cityFormated, "").lowercase().replace(" ", "-")
+
         val latitude = getLocationFromAddress(address)?.latitude.toString()
         val longitude = getLocationFromAddress(address)?.latitude.toString()
 
@@ -147,7 +153,7 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
             street = street,
             houseNumber = number,
             addressComplement = complement,
-            city = city,
+            city = cityFormated,
             propertyType = propertyType,
             spaceType = spaceType,
             guestsQuantity = guestsQuantity,

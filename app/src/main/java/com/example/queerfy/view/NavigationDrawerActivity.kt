@@ -21,6 +21,7 @@ import com.example.queerfy.R
 import com.example.queerfy.databinding.ActivityNavigationDrawerBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import java.text.Normalizer
 
 
 class NavigationDrawerActivity : AppCompatActivity() {
@@ -140,16 +141,29 @@ class NavigationDrawerActivity : AppCompatActivity() {
         val search = menu.findItem(R.id.action_search)
         val editSearch = search.actionView as SearchView
         search.collapseActionView()
+
+        val listResidencePage = Intent(this, ResidenceListActivity::class.java)
+
         editSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.d("Teste: ", "Escolheu")
+                // Log.d("Teste: ", "Escolheu")
                 search.collapseActionView()
                 search.expandActionView()
+
+                var queryFormated = Normalizer.normalize(query, Normalizer.Form.NFD);
+
+                queryFormated = Regex("\\p{InCombiningDiacriticalMarks}+").replace(queryFormated, "").lowercase().replace(" ", "-")
+
+                listResidencePage.putExtra("city", queryFormated)
+                listResidencePage.putExtra("cityNotFormated", query)
+
+                startActivity(listResidencePage)
+
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                Log.d("Teste: ", "Digitando...")
+                // Log.d("Teste: ", "Digitando...")
                 search.expandActionView()
                 arrayAdapter.filter.filter(newText)
                 return false

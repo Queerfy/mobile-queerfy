@@ -2,19 +2,88 @@ package com.example.queerfy.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Property
+import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.queerfy.R
+import com.example.queerfy.model.Favorite
+import com.example.queerfy.services.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ResidenceListActivity : AppCompatActivity() {
+
+    private lateinit var recyclerViewTrendOne: RecyclerView
+    private lateinit var recyclerViewResidence: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_residence_list)
 
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.residence_list_trend_one, TrendResidenceFragment::class.java, null)
-        transaction.commit()
+        val city = intent.getStringExtra("city") as String
+        val cityNotFormated = intent.getStringExtra("cityNotFormated")
 
-        val transaction2 = supportFragmentManager.beginTransaction()
-        transaction2.add(R.id.residence_list_fragment, ResidenceFragment::class.java, null)
-        transaction2.commit()
+        findViewById<TextView>(R.id.residence_list_trend_title).text = "Locações com as melhores avaliações em ${cityNotFormated}"
+
+        recyclerViewTrendOne = findViewById(R.id.trend_residences_list)
+        recyclerViewTrendOne.layoutManager = LinearLayoutManager(baseContext)
+        recyclerViewTrendOne.itemAnimator = DefaultItemAnimator()
+        recyclerViewTrendOne.setHasFixedSize(true)
+
+        recyclerViewResidence = findViewById(R.id.residences_list)
+        recyclerViewResidence.layoutManager = LinearLayoutManager(baseContext)
+        recyclerViewResidence.itemAnimator = DefaultItemAnimator()
+        recyclerViewResidence.setHasFixedSize(true)
+
+        val getProperties = Api.create().getResidencesSearch(city)
+
+        var residencesTrendList = mutableListOf<com.example.queerfy.model.Property>()
+
+        var residencesListSearch = mutableListOf<com.example.queerfy.model.Property>()
+
+        getProperties.enqueue(object: Callback<List<com.example.queerfy.model.Property>> {
+            override fun onResponse(
+                call: Call<List<com.example.queerfy.model.Property>>,
+                response: Response<List<com.example.queerfy.model.Property>>
+            ) {
+                if(response.isSuccessful) {
+
+                    val residenciesList = response.body()
+
+                    if(!residenciesList!!.isEmpty()) {
+
+                        residenciesList.forEach { property ->
+
+                            if (property.likes!! > 1000) {
+                                residencesTrendList.add(property)
+                            }
+
+                            residencesListSearch.add(property)
+
+
+                        }
+
+                        recyclerViewTrendOne.adapter = TrendResidenceFragment(residencesTrendList)
+
+                        recyclerViewResidence.adapter = ResidenceFragment(residencesListSearch)
+
+                    }
+                }
+            }
+
+            override fun onFailure(
+                call: Call<List<com.example.queerfy.model.Property>>,
+                t: Throwable
+            ) {
+                Toast.makeText(this@ResidenceListActivity, "Erro ao carregar as residencias!", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
     }
+
 }

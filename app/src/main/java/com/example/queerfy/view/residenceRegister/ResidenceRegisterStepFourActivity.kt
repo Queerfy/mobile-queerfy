@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import android.widget.CheckBox
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +31,7 @@ class ResidenceRegisterStepFourActivity: AppCompatActivity() {
     }
 
     fun handleClickedButton(v: View) {
-        if (v is RadioButton) {
+        if (v is CheckBox) {
             val checked = v.isChecked
 
             when(v.getId()) {

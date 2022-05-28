@@ -27,7 +27,7 @@ import kotlin.time.Duration
 
 class ResidenceActivity : AppCompatActivity() {
 
-    val houseId = 38
+    // val houseId = 38
     var likedResidence: Boolean = false
     var dailyPrice = 0.0
     var total = 0.0
@@ -107,6 +107,9 @@ class ResidenceActivity : AppCompatActivity() {
         val confirmationActivity = Intent(this@ResidenceActivity, ConfirmationActivity::class.java)
 
         // Aqui vai o id da casa dinamicamente
+
+        val houseId = intent.getIntExtra("idHouse", 0)
+
         val getProperty = Api.create().getProperty(houseId)
 
         getProperty.enqueue(object : Callback<Property> {
@@ -213,6 +216,8 @@ class ResidenceActivity : AppCompatActivity() {
 
         val idUser = preferences.getInt("idUser", 0)
 
+        val houseId = intent.getIntExtra("idHouse", 0)
+
         val getUser = Api.create().getUser(idUser)
 
         getUser.enqueue(object : Callback<User> {
@@ -254,6 +259,8 @@ class ResidenceActivity : AppCompatActivity() {
 
     fun handleLikeHouse(v: View) {
         val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
+
+        val houseId = intent.getIntExtra("idHouse", 0)
 
         val idUser = preferences.getInt("idUser", 0)
 

@@ -43,6 +43,9 @@ interface Api {
     @PATCH("properties/image{index}/{id}")
     fun uploadImages(@Path("index") index: Int, @Part filePart: MultipartBody.Part, @Path("id") id: Int): Call<Void>
 
+    @GET("/properties/city/{city}")
+    fun getResidencesSearch(@Path("city") city: String): Call<List<Property>>
+
     @POST("favorites")
     fun createFavorite(@Body newFavorite: NewFavorite): Call<Void>
 
@@ -54,8 +57,8 @@ interface Api {
 
     companion object {
         // Trocar para o ip local da maquina
-        //var url = "http://192.168.0.51:8080/"
-        var url = "http://10.18.7.9:8080/"
+        var url = "http://192.168.0.51:8080/"
+        // var url = "http://10.18.7.9:8080/"
 
         fun create(): Api {
             var retrofit = Retrofit.Builder()

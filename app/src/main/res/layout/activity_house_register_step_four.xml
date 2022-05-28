@@ -28,85 +28,78 @@
         android:background="@color/border_dark" />
 
 
-    <RadioGroup
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtTitleResidence"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/title_which_filters_fit"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtTitleResidence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/title_which_filters_fit"
-            android:textAlignment="center"
-            android:textColor="@color/red"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+    <CheckBox
+        android:id="@+id/have_wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/wifi"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:onClick="handleClickedButton"
+        />
 
-        <RadioButton
-            android:id="@+id/have_wifi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="@string/wifi"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:onClick="handleClickedButton"
-            />
+    <CheckBox
+        android:id="@+id/have_chicken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/kitchen"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:onClick="handleClickedButton"
+        />
 
-        <RadioButton
-            android:id="@+id/have_chicken"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="@string/kitchen"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:onClick="handleClickedButton"
-            />
+    <CheckBox
+        android:id="@+id/have_garage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/garage"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:onClick="handleClickedButton"
+        />
 
-        <RadioButton
-            android:id="@+id/have_garage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="@string/garage"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:onClick="handleClickedButton"
-            />
+    <CheckBox
+        android:id="@+id/have_animals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/animals"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:onClick="handleClickedButton"
+        />
 
-        <RadioButton
-            android:id="@+id/have_animals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="@string/animals"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:onClick="handleClickedButton"
-            />
-
-        <RadioButton
-            android:id="@+id/have_suite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="@string/suite"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:onClick="handleClickedButton"
-            />
-
-    </RadioGroup>
+    <CheckBox
+        android:id="@+id/have_suite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/suite"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:onClick="handleClickedButton"
+        />
 
     <Button
         android:id="@+id/btnStep"

@@ -42,12 +42,14 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/residence_list_trend_subtitle">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/residence_list_trend_one"
-                android:name="com.example.queerfy.view.TrendResidenceFragment"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trend_residences_list"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_trend_residence" />
+                android:clipToPadding="false"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
+
         </ScrollView>
 
 
@@ -144,12 +146,13 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/residence_list_title">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/residence_list_fragment"
-                android:name="com.example.queerfy.view.ResidenceFragment"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/residences_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_residence" />
+                android:clipToPadding="false"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
