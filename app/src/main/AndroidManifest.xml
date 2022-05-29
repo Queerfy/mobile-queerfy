@@ -3,6 +3,8 @@
     package="com.example.queerfy">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -25,6 +27,9 @@
         </activity>
         <activity
             android:name=".view.ResidenceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ResidenceListActivity"
             android:exported="false" />
         <activity
             android:name=".view.ToPlanRegisterActivity"
@@ -51,13 +56,25 @@
             android:name=".view.LoginFormActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MyFavoritesActivity"
+            android:name=".view.ConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MyReservationsActivity"
+            android:name=".view.residenceRegister.ResidenceRegisterStepOneActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MyAdsActivity"
+            android:name=".view.residenceRegister.ResidenceRegisterStepTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.residenceRegister.ResidenceRegisterStepThreeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.residenceRegister.ResidenceRegisterStepFourActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.residenceRegister.ResidenceRegisterStepFiveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.residenceRegister.ResidenceRegisterStepSixActivity"
             android:exported="false" />
     </application>
 

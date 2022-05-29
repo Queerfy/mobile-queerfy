@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_light"
     android:orientation="vertical"
-    tools:context=".view.RegisterChooseActivity">
+    tools:context=".view.residenceRegister.ResidenceRegisterStepFiveActivity">
 
     <TextView
         android:id="@+id/txtTitle"
@@ -118,7 +118,9 @@
             android:background="@drawable/shape_register_button"
             android:backgroundTint="@color/red"
             android:text="@string/following"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:onClick="advancedStepSix"
+            />
     </LinearLayout>
 
 </LinearLayout>

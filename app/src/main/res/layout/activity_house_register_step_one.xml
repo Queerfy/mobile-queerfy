@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_light"
     android:orientation="vertical"
-    tools:context=".view.RegisterChooseActivity">
+    tools:context=".view.residenceRegister.ResidenceRegisterStepOneActivity">
 
     <TextView
         android:id="@+id/txtTitle"
@@ -46,6 +46,7 @@
             android:textStyle="bold" />
 
         <RadioButton
+            android:id="@+id/type_apartment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -55,6 +56,7 @@
             android:textStyle="bold" />
 
         <RadioButton
+            android:id="@+id/type_house"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -83,6 +85,7 @@
             android:textStyle="bold" />
 
         <RadioButton
+            android:id="@+id/space_whole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -92,6 +95,7 @@
             android:textStyle="bold" />
 
         <RadioButton
+            android:id="@+id/space_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -101,6 +105,7 @@
             android:textStyle="bold" />
 
         <RadioButton
+            android:id="@+id/space_room_shared"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -122,6 +127,8 @@
         android:background="@drawable/shape_register_button"
         android:backgroundTint="@color/red"
         android:text="@string/following"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:onClick="advancedStep"
+        />
 
 </LinearLayout>

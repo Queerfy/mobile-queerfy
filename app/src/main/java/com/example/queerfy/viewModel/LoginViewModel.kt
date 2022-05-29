@@ -8,11 +8,8 @@ import android.widget.Toast
 import com.example.queerfy.model.LoginUserModel
 import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
-import com.example.queerfy.view.ResidenceActivity
-import com.example.queerfy.view.AccountActivity
-import com.example.queerfy.view.MyAdsActivity
-import com.example.queerfy.view.MyFavoritesActivity
-import com.example.queerfy.view.showCustomToast
+import com.example.queerfy.view.*
+import com.example.queerfy.view.residenceRegister.ResidenceRegisterStepOneActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +23,9 @@ class LoginViewModel {
             val postLogin = Api.create().loginUser(modelUserLogin)
 
             val residenceActivity = Intent(context, ResidenceActivity::class.java)
+            val residenceRegister = Intent(context, ResidenceRegisterStepOneActivity::class.java)
+            val accountActivity = Intent(context, AccountActivity::class.java)
+            val homePage = Intent(context, NavigationDrawerActivity::class.java)
 
             postLogin.enqueue(object: Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -36,7 +36,7 @@ class LoginViewModel {
                         editPreferences.putInt("idUser", response.body()?.id as Int)
                         editPreferences.commit()
 
-                        context.startActivity(residenceActivity)
+                        context.startActivity(homePage)
 
                     }else {
                         Toast(context).showCustomToast("Email ou Senha Incorreto!", context as Activity)

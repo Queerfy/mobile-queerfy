@@ -21,8 +21,10 @@
             android:layout_height="wrap_content"
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
-            android:layout_marginLeft="20dp"
-            />
+            android:text="Meus Anuncios"
+            android:textColor="@color/purple"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
 
         <androidx.recyclerview.widget.RecyclerView

@@ -58,6 +58,7 @@ class MyFavoritesActivity : AppCompatActivity() {
                     if(favorites?.isEmpty() == false) {
 
                         favorites.forEach { favorite ->
+
                             favoriteList.add(favorite)
                         }
 

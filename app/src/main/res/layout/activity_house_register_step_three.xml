@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_light"
     android:orientation="vertical"
-    tools:context=".view.RegisterChooseActivity">
+    tools:context=".view.residenceRegister.ResidenceRegisterStepThreeActivity">
 
     <TextView
         android:id="@+id/txtTitle"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_register_edit_text"
             android:hint="5"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="10dp"
             android:textSize="16sp" />
 
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_register_edit_text"
             android:hint="5"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="10dp"
             android:textSize="16sp" />
 
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_register_edit_text"
             android:hint="5"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="10dp"
             android:textSize="16sp" />
 
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_register_edit_text"
             android:hint="5"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="10dp"
             android:textSize="16sp" />
 
@@ -127,7 +127,9 @@
             android:background="@drawable/shape_register_button"
             android:backgroundTint="@color/red"
             android:text="@string/following"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:onClick="advancedStepFour"
+            />
     </LinearLayout>
 
 </LinearLayout>

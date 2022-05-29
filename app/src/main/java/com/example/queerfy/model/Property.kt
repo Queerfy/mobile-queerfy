@@ -29,4 +29,5 @@ data class Property(
     val haveSuite: Boolean?,
     val haveGarage: Boolean?,
     val haveAnimals: Boolean?,
+    val referencePoint: String?
 )
