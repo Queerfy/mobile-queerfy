@@ -117,14 +117,15 @@ class NavigationDrawerActivity : AppCompatActivity() {
                 }
 
                 R.id.logout_item -> {
-                    if (idUser !== 0) {
-                        userPreferences.edit().remove("idUser").commit()
-
+                    if (idUser == 0) {
+                        startActivity(loginPage)
+                    } else {
+                        userPreferences.edit().remove("idUser").apply()
                         Toast.makeText(this, "Usuario Deslogado!", Toast.LENGTH_SHORT).show()
                     }
-
                 }
             }
+
             false
         }
 
