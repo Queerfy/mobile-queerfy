@@ -29,7 +29,8 @@ class ResidenceListActivity : AppCompatActivity() {
         val city = intent.getStringExtra("city") as String
         val cityNotFormated = intent.getStringExtra("cityNotFormated")
 
-        findViewById<TextView>(R.id.residence_list_trend_title).text = "Locações com as melhores avaliações em ${cityNotFormated}"
+        findViewById<TextView>(R.id.residence_list_trend_title).text =
+            "Locações com as melhores avaliações em ${cityNotFormated}"
 
         recyclerViewTrendOne = findViewById(R.id.trend_residences_list)
         recyclerViewTrendOne.layoutManager = LinearLayoutManager(baseContext)
@@ -47,23 +48,26 @@ class ResidenceListActivity : AppCompatActivity() {
 
         var residencesListSearch = mutableListOf<com.example.queerfy.model.Property>()
 
-        getProperties.enqueue(object: Callback<List<com.example.queerfy.model.Property>> {
+        getProperties.enqueue(object : Callback<List<com.example.queerfy.model.Property>> {
             override fun onResponse(
                 call: Call<List<com.example.queerfy.model.Property>>,
                 response: Response<List<com.example.queerfy.model.Property>>
             ) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
 
                     val residenciesList = response.body()
 
-                    if(!residenciesList!!.isEmpty()) {
+                    if (!residenciesList!!.isEmpty()) {
 
                         residenciesList.forEach { property ->
 
                             if (property.likes!! > 1000) {
-                                findViewById<TextView>(R.id.residence_list_trend_title).visibility = View.VISIBLE
-                                findViewById<TextView>(R.id.residence_list_trend_subtitle).visibility = View.VISIBLE
-                                findViewById<TextView>(R.id.residence_list_trending_container).visibility = View.VISIBLE
+                                findViewById<TextView>(R.id.residence_list_trend_title).visibility =
+                                    View.VISIBLE
+                                findViewById<TextView>(R.id.residence_list_trend_subtitle).visibility =
+                                    View.VISIBLE
+                                findViewById<TextView>(R.id.residence_list_trending_container).visibility =
+                                    View.VISIBLE
                                 residencesTrendList.add(property)
                             }
 
@@ -84,7 +88,11 @@ class ResidenceListActivity : AppCompatActivity() {
                 call: Call<List<com.example.queerfy.model.Property>>,
                 t: Throwable
             ) {
-                Toast.makeText(this@ResidenceListActivity, "Erro ao carregar as residencias!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@ResidenceListActivity,
+                    "Erro ao carregar as residencias!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
@@ -99,16 +107,16 @@ class ResidenceListActivity : AppCompatActivity() {
 
         var residencesListSearch = mutableListOf<com.example.queerfy.model.Property>()
 
-        getProperties.enqueue(object: Callback<List<com.example.queerfy.model.Property>> {
+        getProperties.enqueue(object : Callback<List<com.example.queerfy.model.Property>> {
             override fun onResponse(
                 call: Call<List<com.example.queerfy.model.Property>>,
                 response: Response<List<com.example.queerfy.model.Property>>
             ) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
 
                     val residenciesList = response.body()
 
-                    if(!residenciesList!!.isEmpty()) {
+                    if (!residenciesList!!.isEmpty()) {
 
                         residenciesList.forEach { property ->
 
@@ -128,7 +136,11 @@ class ResidenceListActivity : AppCompatActivity() {
                 call: Call<List<com.example.queerfy.model.Property>>,
                 t: Throwable
             ) {
-                Toast.makeText(this@ResidenceListActivity, "Erro ao carregar as residencias!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@ResidenceListActivity,
+                    "Erro ao carregar as residencias!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
@@ -142,16 +154,16 @@ class ResidenceListActivity : AppCompatActivity() {
 
         var residencesListSearch = mutableListOf<com.example.queerfy.model.Property>()
 
-        getProperties.enqueue(object: Callback<List<com.example.queerfy.model.Property>> {
+        getProperties.enqueue(object : Callback<List<com.example.queerfy.model.Property>> {
             override fun onResponse(
                 call: Call<List<com.example.queerfy.model.Property>>,
                 response: Response<List<com.example.queerfy.model.Property>>
             ) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
 
                     val residenciesList = response.body()
 
-                    if(!residenciesList!!.isEmpty()) {
+                    if (!residenciesList!!.isEmpty()) {
 
                         residenciesList.forEach { property ->
 
@@ -171,7 +183,11 @@ class ResidenceListActivity : AppCompatActivity() {
                 call: Call<List<com.example.queerfy.model.Property>>,
                 t: Throwable
             ) {
-                Toast.makeText(this@ResidenceListActivity, "Erro ao carregar as residencias!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@ResidenceListActivity,
+                    "Erro ao carregar as residencias!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
@@ -185,16 +201,16 @@ class ResidenceListActivity : AppCompatActivity() {
 
         var residencesListSearch = mutableListOf<com.example.queerfy.model.Property>()
 
-        getProperties.enqueue(object: Callback<List<com.example.queerfy.model.Property>> {
+        getProperties.enqueue(object : Callback<List<com.example.queerfy.model.Property>> {
             override fun onResponse(
                 call: Call<List<com.example.queerfy.model.Property>>,
                 response: Response<List<com.example.queerfy.model.Property>>
             ) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
 
                     val residenciesList = response.body()
 
-                    if(!residenciesList!!.isEmpty()) {
+                    if (!residenciesList!!.isEmpty()) {
 
                         residenciesList.forEach { property ->
 
@@ -214,7 +230,11 @@ class ResidenceListActivity : AppCompatActivity() {
                 call: Call<List<com.example.queerfy.model.Property>>,
                 t: Throwable
             ) {
-                Toast.makeText(this@ResidenceListActivity, "Erro ao carregar as residencias!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@ResidenceListActivity,
+                    "Erro ao carregar as residencias!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
@@ -228,16 +248,16 @@ class ResidenceListActivity : AppCompatActivity() {
 
         var residencesListSearch = mutableListOf<com.example.queerfy.model.Property>()
 
-        getProperties.enqueue(object: Callback<List<com.example.queerfy.model.Property>> {
+        getProperties.enqueue(object : Callback<List<com.example.queerfy.model.Property>> {
             override fun onResponse(
                 call: Call<List<com.example.queerfy.model.Property>>,
                 response: Response<List<com.example.queerfy.model.Property>>
             ) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
 
                     val residenciesList = response.body()
 
-                    if(!residenciesList!!.isEmpty()) {
+                    if (!residenciesList!!.isEmpty()) {
 
                         residenciesList.forEach { property ->
 
@@ -257,7 +277,11 @@ class ResidenceListActivity : AppCompatActivity() {
                 call: Call<List<com.example.queerfy.model.Property>>,
                 t: Throwable
             ) {
-                Toast.makeText(this@ResidenceListActivity, "Erro ao carregar as residencias!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@ResidenceListActivity,
+                    "Erro ao carregar as residencias!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
@@ -271,16 +295,16 @@ class ResidenceListActivity : AppCompatActivity() {
 
         var residencesListSearch = mutableListOf<com.example.queerfy.model.Property>()
 
-        getProperties.enqueue(object: Callback<List<com.example.queerfy.model.Property>> {
+        getProperties.enqueue(object : Callback<List<com.example.queerfy.model.Property>> {
             override fun onResponse(
                 call: Call<List<com.example.queerfy.model.Property>>,
                 response: Response<List<com.example.queerfy.model.Property>>
             ) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
 
                     val residenciesList = response.body()
 
-                    if(!residenciesList!!.isEmpty()) {
+                    if (!residenciesList!!.isEmpty()) {
 
                         residenciesList.forEach { property ->
 
@@ -300,7 +324,11 @@ class ResidenceListActivity : AppCompatActivity() {
                 call: Call<List<com.example.queerfy.model.Property>>,
                 t: Throwable
             ) {
-                Toast.makeText(this@ResidenceListActivity, "Erro ao carregar as residencias!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@ResidenceListActivity,
+                    "Erro ao carregar as residencias!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })

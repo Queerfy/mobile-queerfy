@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.LatLng
 import java.io.IOException
 import java.text.Normalizer
 
-class ResidenceRegisterStepSixActivity: AppCompatActivity() {
+class ResidenceRegisterStepSixActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHouseRegisterStepSixBinding
     lateinit var residenceRegister: SharedPreferences
     private val residenceRegisterViewModel = ResidenceRegisterViewModel()
@@ -44,10 +44,9 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             intent.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(
-                Intent.createChooser(intent, "Choose Pictures")
-                , REQUEST_CODE
+                Intent.createChooser(intent, "Choose Pictures"), REQUEST_CODE
             )
-        }else {
+        } else {
             var intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             intent.addCategory(Intent.CATEGORY_OPENABLE)
@@ -70,7 +69,7 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
 
                     // println(imagesUri.size)
                 }
-            }else if(data?.data != null) {
+            } else if (data?.data != null) {
                 // if single image is selected
                 imagesUri.add(data.data!!)
 
@@ -94,7 +93,7 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
             val location = address?.get(0)
             p1 = location?.let { LatLng(it.latitude, location.longitude) }
 
-        }catch (ex: IOException) {
+        } catch (ex: IOException) {
             ex.printStackTrace();
         }
 
@@ -130,14 +129,16 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
         val describeResidence = residenceRegister.getString("describeResidence", "")
         val dailyPrice = residenceRegister.getFloat("dailyPrice", 0F).toDouble()
 
-        val address = "${number} ${street}, ${city}"
+        val address = "$number ${street}, $city"
 
         var cityFormated = Normalizer.normalize(city, Normalizer.Form.NFD);
 
-        cityFormated = Regex("\\p{InCombiningDiacriticalMarks}+").replace(cityFormated, "").lowercase().replace(" ", "-")
+        cityFormated =
+            Regex("\\p{InCombiningDiacriticalMarks}+").replace(cityFormated, "").lowercase()
+                .replace(" ", "-")
 
         val latitude = getLocationFromAddress(address)?.latitude.toString()
-        val longitude = getLocationFromAddress(address)?.latitude.toString()
+        val longitude = getLocationFromAddress(address)?.longitude.toString()
 
         residenceRegisterViewModel.newPropertyModel = NewPropertyModel(
             name = titleResidence,
@@ -173,7 +174,5 @@ class ResidenceRegisterStepSixActivity: AppCompatActivity() {
         residenceRegisterViewModel.newPropertyModel?.let { it1 ->
             residenceRegisterViewModel.putIntoBd(it1, imagesUri, this)
         }
-
-
     }
 }

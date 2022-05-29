@@ -18,7 +18,7 @@ class RegisterChooseActivity : AppCompatActivity() {
         setButtonListeners()
     }
 
-    fun setButtonListeners() {
+    private fun setButtonListeners() {
         binding.btnUrgency.setOnClickListener {
             val intent = Intent(this, UrgencyRegisterActivity::class.java)
             startActivity(intent)

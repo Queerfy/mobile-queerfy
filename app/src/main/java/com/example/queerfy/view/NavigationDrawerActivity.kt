@@ -3,11 +3,8 @@ package com.example.queerfy.view
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
-import android.view.MenuItem.OnActionExpandListener
 import android.widget.ArrayAdapter
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +27,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNavigationDrawerBinding
     private lateinit var userPreferences: SharedPreferences
 
-    val arrayList = listOf("São Paulo", "Rio de Janeiro")
+    private val arrayList = listOf("São Paulo", "Rio de Janeiro")
     lateinit var arrayAdapter: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +62,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
             val loginPage = Intent(this, LoginFormActivity::class.java)
 
-            when(menuItem.itemId) {
+            when (menuItem.itemId) {
 
                 R.id.nav_home -> {
                     val homepage = Intent(this, NavigationDrawerActivity::class.java)
@@ -75,9 +72,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
                 R.id.myAds -> {
 
-                    if(idUser == 0) {
+                    if (idUser == 0) {
                         startActivity(loginPage)
-                    }else {
+                    } else {
                         val adsPage = Intent(this, MyAdsActivity::class.java)
 
                         startActivity(adsPage)
@@ -87,9 +84,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
                 R.id.myAccount -> {
 
-                    if(idUser == 0) {
+                    if (idUser == 0) {
                         startActivity(loginPage)
-                    }else {
+                    } else {
                         val accountPage = Intent(this, AccountActivity::class.java)
 
                         startActivity(accountPage)
@@ -98,9 +95,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
                 R.id.myFavorites -> {
 
-                    if(idUser == 0) {
+                    if (idUser == 0) {
                         startActivity(loginPage)
-                    }else {
+                    } else {
                         val myFavoritePage = Intent(this, MyFavoritesActivity::class.java)
 
                         startActivity(myFavoritePage)
@@ -110,9 +107,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
                 R.id.myReservations -> {
 
-                    if(idUser == 0) {
+                    if (idUser == 0) {
                         startActivity(loginPage)
-                    }else {
+                    } else {
                         val myReservationsPage = Intent(this, MyReservationsActivity::class.java)
 
                         startActivity(myReservationsPage)
@@ -120,7 +117,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
                 }
 
                 R.id.logout_item -> {
-                    if(idUser !== 0) {
+                    if (idUser !== 0) {
                         userPreferences.edit().remove("idUser").commit()
 
                         Toast.makeText(this, "Usuario Deslogado!", Toast.LENGTH_SHORT).show()
@@ -152,7 +149,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
                 var queryFormated = Normalizer.normalize(query, Normalizer.Form.NFD);
 
-                queryFormated = Regex("\\p{InCombiningDiacriticalMarks}+").replace(queryFormated, "").lowercase().replace(" ", "-")
+                queryFormated =
+                    Regex("\\p{InCombiningDiacriticalMarks}+").replace(queryFormated, "")
+                        .lowercase().replace(" ", "-")
 
                 listResidencePage.putExtra("city", queryFormated)
                 listResidencePage.putExtra("cityNotFormated", query)
@@ -168,10 +167,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
                 arrayAdapter.filter.filter(newText)
                 return false
             }
-
         })
 
-            return true
+        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {

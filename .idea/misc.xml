@@ -74,6 +74,16 @@
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_register_choose.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_toplan_register.xml" value="0.33" />
         <entry key="..\:/Users/Nicol/Desktop/mobile-queerfy/app/src/main/res/layout/activity_urgency_register.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/activity_my_ads.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/activity_residence_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/content_navigation_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/fragment_my_ads.xml" value="0.25" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/fragment_my_favorites.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/fragment_my_reservations.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lemos/Documents/Faculdade/mobile-queerfy/app/src/main/res/layout/fragment_residence.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
