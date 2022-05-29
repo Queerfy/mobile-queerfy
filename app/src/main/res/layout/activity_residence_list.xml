@@ -89,6 +89,7 @@
                 android:textSize="12sp" />
 
             <Button
+                android:id="@+id/btn_have_kitchen"
                 style="@style/CategoryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -100,6 +101,7 @@
                 android:textSize="12sp" />
 
             <Button
+                android:id="@+id/btn_have_suite"
                 style="@style/CategoryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -111,6 +113,7 @@
                 android:textSize="12sp" />
 
             <Button
+                android:id="@+id/btn_have_garage"
                 style="@style/CategoryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -122,6 +125,7 @@
                 android:textSize="12sp" />
 
             <Button
+                android:id="@+id/btn_have_animal"
                 style="@style/CategoryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
