@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.queerfy.R
 import com.example.queerfy.model.Favorite
@@ -74,7 +75,7 @@ class MyFavoritesFragment(
 
                     }
 
-                    holder.itemView.findViewById<LinearLayout>(R.id.btn_view_residence).setOnClickListener {
+                    holder.itemView.findViewById<AppCompatButton>(R.id.btn_view_residence).setOnClickListener {
                         residencePage.putExtra("idHouse", myFavorite.id)
 
                         holder.itemView.context.startActivity(residencePage)

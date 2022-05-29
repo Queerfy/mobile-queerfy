@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.queerfy.R
@@ -62,7 +63,7 @@ class MyAdsFragment(
 
         }
 
-        holder.itemView.findViewById<LinearLayout>(R.id.btn_view_residence).setOnClickListener {
+        holder.itemView.findViewById<AppCompatButton>(R.id.btn_view_residence).setOnClickListener {
             residencePage.putExtra("idHouse", myAd.id)
 
             holder.itemView.context.startActivity(residencePage)

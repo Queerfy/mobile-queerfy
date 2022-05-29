@@ -26,10 +26,7 @@
                 <item
                     android:id="@+id/toPlanRegister"
                     android:title="@string/notification" />
-<!--                <item-->
-<!--                    android:id="@+id/logout_item"-->
-<!--                    android:title="@string/exit"-->
-<!--                    />-->
+
             </menu>
         </item>
         <item

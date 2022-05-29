@@ -60,7 +60,7 @@ interface Api {
 
     companion object {
         // Trocar para o ip local da maquina
-        var url = "http://192.168.0.51:8080/"
+        var url = "http://0466-2804-14c-d2-8000-1803-4306-4a2d-d0e3.ngrok.io/"
         // var url = "http://10.18.7.9:8080/"
 
         fun create(): Api {
