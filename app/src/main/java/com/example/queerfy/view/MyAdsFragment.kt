@@ -40,6 +40,8 @@ class MyAdsFragment(
         val descAd = "${myAd.propertyType} - ${myAd.roomQuantity} quarto(s) disponivel"
         holder.itemView.findViewById<TextView>(R.id.desc_my_ad).text = descAd
 
+        val residencePage = Intent(holder.itemView.context, ResidenceActivity::class.java)
+
         holder.itemView.findViewById<ImageView>(R.id.trash_item).setOnClickListener {
             val deleteProperty = Api.create().deleteProperty(myAd.id as Int)
 
@@ -58,6 +60,12 @@ class MyAdsFragment(
 
             })
 
+        }
+
+        holder.itemView.findViewById<LinearLayout>(R.id.btn_view_residence).setOnClickListener {
+            residencePage.putExtra("idHouse", myAd.id)
+
+            holder.itemView.context.startActivity(residencePage)
         }
 
     }

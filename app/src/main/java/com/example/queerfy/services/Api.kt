@@ -52,6 +52,9 @@ interface Api {
     @DELETE("favorites/{id}")
     fun deleteFavorite(@Path("id") id: Int): Call<Void>
 
+    @POST("leases")
+    fun creteLease(@Body newLeaseModel: NewLeaseModel): Call<Void>
+
     @GET("leases/{id}")
     fun getMyreservations(@Path("id") id: Int): Call<List<Property>>
 

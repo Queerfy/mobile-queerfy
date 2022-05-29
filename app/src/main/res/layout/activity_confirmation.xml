@@ -217,7 +217,9 @@
             android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/confirmation_total_label" />
+            app:layout_constraintTop_toBottomOf="@id/confirmation_total_label"
+            android:onClick="createLease"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

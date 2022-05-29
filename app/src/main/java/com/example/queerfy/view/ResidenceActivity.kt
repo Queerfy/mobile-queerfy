@@ -110,6 +110,10 @@ class ResidenceActivity : AppCompatActivity() {
 
         val houseId = intent.getIntExtra("idHouse", 0)
 
+        val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
+
+        val idUser = preferences.getInt("idUser", 0)
+
         val getProperty = Api.create().getProperty(houseId)
 
         getProperty.enqueue(object : Callback<Property> {
@@ -176,16 +180,20 @@ class ResidenceActivity : AppCompatActivity() {
                                 findViewById<TextView>(R.id.owner_residence).text = nameOwner
 
                                 findViewById<Button>(R.id.button_confirm).setOnClickListener { it ->
-                                    confirmationActivity.putExtra("residenceTitle", residenceTitle)
-                                    confirmationActivity.putExtra("residenteDetails", residenteDetails)
-                                    confirmationActivity.putExtra("uf", uf)
-                                    confirmationActivity.putExtra("datachekin", datachekin)
-                                    confirmationActivity.putExtra("datachekout", datachekout)
-                                    confirmationActivity.putExtra("dailyPrice", dailyPrice)
-                                    confirmationActivity.putExtra("dailys", diff)
-                                    confirmationActivity.putExtra("total", total)
+                                    if (response.body()?.id != idUser) {
+                                        confirmationActivity.putExtra("idProperty", houseId)
+                                        confirmationActivity.putExtra("residenceTitle", residenceTitle)
+                                        confirmationActivity.putExtra("residenteDetails", residenteDetails)
+                                        confirmationActivity.putExtra("uf", uf)
+                                        confirmationActivity.putExtra("datachekin", datachekin)
+                                        confirmationActivity.putExtra("datachekout", datachekout)
+                                        confirmationActivity.putExtra("dailyPrice", dailyPrice)
+                                        confirmationActivity.putExtra("dailys", diff)
+                                        confirmationActivity.putExtra("total", total)
 
-                                    startActivity(confirmationActivity)
+                                        startActivity(confirmationActivity)
+                                    }
+
                                 }
                             }
                         }

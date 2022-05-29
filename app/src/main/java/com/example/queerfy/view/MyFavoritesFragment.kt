@@ -1,6 +1,7 @@
 package com.example.queerfy.view
 
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,9 +38,9 @@ class MyFavoritesFragment(
     }
 
     override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
-        val myAd = myFavorites[position]
+        val myFavorite = myFavorites[position]
 
-        val getProperty = Api.create().getProperty(myAd.propertyId as Int)
+        val getProperty = Api.create().getProperty(myFavorite.propertyId as Int)
 
         getProperty.enqueue(object : retrofit2.Callback<Property> {
             override fun onResponse(
@@ -51,9 +52,11 @@ class MyFavoritesFragment(
                     val descAd = "${response.body()?.propertyType} - ${response.body()?.roomQuantity} quarto(s) disponivel"
                     holder.itemView.findViewById<TextView>(R.id.property_name).text = descAd
 
+                    val residencePage = Intent(holder.itemView.context, ResidenceActivity::class.java)
+
                     holder.itemView.findViewById<ImageView>(R.id.icon_favorite).setOnClickListener{
 
-                        val deleteFavorite = Api.create().deleteFavorite(myAd.id as Int)
+                        val deleteFavorite = Api.create().deleteFavorite(myFavorite.id as Int)
 
                         deleteFavorite.enqueue(object: Callback<Void>{
                             override fun onResponse(call: Call<Void>, response: Response<Void>) {
@@ -71,12 +74,18 @@ class MyFavoritesFragment(
 
                     }
 
+                    holder.itemView.findViewById<LinearLayout>(R.id.btn_view_residence).setOnClickListener {
+                        residencePage.putExtra("idHouse", myFavorite.id)
+
+                        holder.itemView.context.startActivity(residencePage)
+                    }
+
                 }
 
             }
 
             override fun onFailure(call: Call<Property>, t: Throwable) {
-                println("Erro ao Carregar as informações")
+                println("Erro ao Carregar as informações!")
             }
 
         })

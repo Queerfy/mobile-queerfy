@@ -58,6 +58,7 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_view_residence"
                 android:background="@drawable/button_ads"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
