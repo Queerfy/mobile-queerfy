@@ -151,4 +151,5 @@
     <string name="host">Hospedar</string>
     <string name="earn_money">Ganhe dinheiro \ne ajude a comunidade</string>
     <string name="places_to_rent">Locais para alugar de acordo \ncom sua região</string>
+    <string name="map_description">Mapa da sua cidade</string>
 </resources>
