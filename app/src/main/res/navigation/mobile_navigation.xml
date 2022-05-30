@@ -13,9 +13,9 @@
 
     <activity
         android:id="@+id/myAccount"
-        android:name="com.example.queerfy.view.ToPlanRegisterActivity"
+        android:name="com.example.queerfy.view.LoginFormActivity"
         android:label="ToPlanActivity"
-        tools:layout="@layout/activity_toplan_register" />
+        tools:layout="@layout/activity_login_form" />
 
     <activity
         android:id="@+id/myAds"
@@ -27,7 +27,7 @@
         android:id="@+id/myFavorites"
         android:name="com.example.queerfy.view.MyFavoritesActivity"
         android:label="myFavorites"
-        tools:layout="@layout/activity_toplan_register" />
+        tools:layout="@layout/activivity_my_favorites" />
 
     <activity
         android:id="@+id/myReservations"

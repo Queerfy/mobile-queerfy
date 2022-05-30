@@ -6,7 +6,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.queerfy.R
 import com.example.queerfy.databinding.ActivityToplanRegisterBinding
+import com.example.queerfy.databinding.FragmentMyFavoritesBinding
 import com.example.queerfy.model.ToPlanRegisterModel
 import com.example.queerfy.model.UrgencyRegisterModel
 import com.example.queerfy.utils.*
@@ -106,7 +108,41 @@ class ToPlanRegisterActivity : AppCompatActivity() {
     }
 
     private fun validateFields(): Boolean {
-        // TODO Validar todos os campos (Botão Finalizar)
+        if (this.binding.edtName.toString().isEmpty()) {
+            this.binding.edtName.error = "Nome Invalido!"
+            return false
+        }
+
+        if (this.binding.edtRg.text.toString().isEmpty()) {
+            this.binding.edtRg.error = "RG Invalido!"
+            return false
+        }
+
+        if (this.binding.edtSinceDate.text.toString().isEmpty()) {
+            this.binding.edtSinceDate.error = "Data de Nascimento Invalido!"
+            return false
+        }
+
+        if (this.binding.edtCpf.text.toString().isEmpty()) {
+            this.binding.edtCpf.error = "CPF Invalido!"
+            return false
+        }
+
+        if (this.binding.edtEmail.text.toString().isEmpty()) {
+            this.binding.edtEmail.error = "Email Invalido!"
+            return false
+        }
+
+        if (this.binding.edtPhone.text.toString().isEmpty()) {
+            this.binding.edtPhone.error = "Telefone Invalido!"
+            return false
+        }
+
+        if (this.binding.edtPassword.text.toString().isEmpty()) {
+            this.binding.edtPassword.error = "Senha Invalida!"
+            return false
+        }
+
         return true
     }
 
