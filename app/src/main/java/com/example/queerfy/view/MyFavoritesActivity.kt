@@ -64,6 +64,8 @@ class MyFavoritesActivity : AppCompatActivity() {
 
                         recyclerView.adapter = MyFavoritesFragment(favoriteList)
 
+                    } else {
+                        Toast(this@MyFavoritesActivity).showCustomToast("Nenhum Favorito realizado!", this@MyFavoritesActivity)
                     }
 
                 }

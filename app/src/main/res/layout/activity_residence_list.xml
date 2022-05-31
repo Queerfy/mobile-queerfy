@@ -35,12 +35,12 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/residence_list_trend_title" />
 
-        <ScrollView
+        <LinearLayout
             android:id="@+id/residence_list_trending_container"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
+            android:gravity="center"
+            android:orientation="vertical"
             android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/residence_list_trend_subtitle">
@@ -49,11 +49,9 @@
                 android:id="@+id/trend_residences_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:divider="@null"
-                android:dividerHeight="0dp" />
+                android:clipToPadding="false" />
 
-        </ScrollView>
+        </LinearLayout>
 
 
         <TextView

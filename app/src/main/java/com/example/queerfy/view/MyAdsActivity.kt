@@ -15,6 +15,11 @@ import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
 import retrofit2.Call
 import retrofit2.Response
+import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
+import com.esri.arcgisruntime.mapping.ArcGISMap
+import com.esri.arcgisruntime.mapping.BasemapStyle
+import com.esri.arcgisruntime.mapping.Viewpoint
+import com.esri.arcgisruntime.mapping.view.MapView
 
 class MyAdsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyAdsBinding
@@ -30,8 +35,16 @@ class MyAdsActivity : AppCompatActivity() {
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.setHasFixedSize(true)
 
-        listMyAds()
+//        ArcGISRuntimeEnvironment.setApiKey("AAPKed018f593bae4100ad82d70ca5dc209982Jf6BtQdYma4z-gv2djY5FxqdrhcLJy98_WGe6SrkApXpxvPWKPWNPuOAbhKn1O")
+//
+//        this.binding.mapView.map = ArcGISMap(BasemapStyle.ARCGIS_TOPOGRAPHIC)
+//
+//        this.binding.mapView.setViewpoint(Viewpoint(-23.507760, -46.436610, 72000.0))
+
+         listMyAds()
     }
+
+
 
     fun listMyAds() {
         val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
@@ -58,6 +71,8 @@ class MyAdsActivity : AppCompatActivity() {
                         propertyList
                     )
 
+                }else {
+                    Toast(this@MyAdsActivity).showCustomToast("Nenhum Favorito realizado!", this@MyAdsActivity)
                 }
             }
 

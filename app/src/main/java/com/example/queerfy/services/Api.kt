@@ -56,11 +56,11 @@ interface Api {
     fun creteLease(@Body newLeaseModel: NewLeaseModel): Call<Void>
 
     @GET("leases/{id}")
-    fun getMyreservations(@Path("id") id: Int): Call<List<Property>>
+    fun getMyreservations(@Path("id") id: Int): Call<List<Lease>>
 
     companion object {
         // Trocar para o ip local da maquina
-        var url = "https://0466-2804-14c-d2-8000-1803-4306-4a2d-d0e3.ngrok.io/"
+        var url = "http://192.168.0.11:8080/"
         // var url = "http://10.18.7.9:8080/"
 
         fun create(): Api {
