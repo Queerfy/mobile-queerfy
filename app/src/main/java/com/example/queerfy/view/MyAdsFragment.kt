@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.queerfy.R
 import com.example.queerfy.model.Property
+import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,7 +39,11 @@ class MyAdsFragment(
 
     override fun onBindViewHolder(holder: AdsViewHolder, position: Int) {
         val myAd = myAds[position]
+
         val descAd = "${myAd.propertyType} - ${myAd.roomQuantity} quarto(s) disponivel"
+
+        val idOwner = myAd.idUser as Int
+
         holder.itemView.findViewById<TextView>(R.id.desc_my_ad).text = descAd
 
         val residencePage = Intent(holder.itemView.context, ResidenceActivity::class.java)
@@ -68,6 +73,24 @@ class MyAdsFragment(
 
             holder.itemView.context.startActivity(residencePage)
         }
+
+        val getOwner = Api.create().getUser(idOwner)
+
+        getOwner.enqueue(object: Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if (response.isSuccessful) {
+
+                    val nameOwner = response.body()?.name
+
+                    holder.itemView.findViewById<TextView>(R.id.locator_ad).text = "Locador(a): ${nameOwner}"
+                }
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Toast.makeText(holder.itemView.context, "Erro ao caregar as informações do locador!", Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
     }
 

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.queerfy.R
 import com.example.queerfy.model.Favorite
 import com.example.queerfy.model.Property
+import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
 import retrofit2.Call
 import retrofit2.Callback
@@ -53,6 +54,8 @@ class MyFavoritesFragment(
                     val descAd = "${response.body()?.propertyType} - ${response.body()?.roomQuantity} quarto(s) disponivel"
                     holder.itemView.findViewById<TextView>(R.id.property_name).text = descAd
 
+                    val idOwner = response.body()?.idUser as Int
+
                     val residencePage = Intent(holder.itemView.context, ResidenceActivity::class.java)
 
                     holder.itemView.findViewById<ImageView>(R.id.icon_favorite).setOnClickListener{
@@ -80,6 +83,24 @@ class MyFavoritesFragment(
 
                         holder.itemView.context.startActivity(residencePage)
                     }
+
+                    val getOwner = Api.create().getUser(idOwner)
+
+                    getOwner.enqueue(object: Callback<User> {
+                        override fun onResponse(call: Call<User>, response: Response<User>) {
+                            if (response.isSuccessful) {
+
+                                val nameOwner = response.body()?.name
+
+                                holder.itemView.findViewById<TextView>(R.id.user_name).text = "Locador(a): ${nameOwner}"
+                            }
+                        }
+
+                        override fun onFailure(call: Call<User>, t: Throwable) {
+                            Toast.makeText(holder.itemView.context, "Erro ao caregar as informações do locador!", Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
 
                 }
 

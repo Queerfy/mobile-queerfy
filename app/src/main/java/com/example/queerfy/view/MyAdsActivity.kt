@@ -1,20 +1,28 @@
 package com.example.queerfy.view
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
+import com.esri.arcgisruntime.geometry.Point
+import com.esri.arcgisruntime.geometry.SpatialReferences
+import com.esri.arcgisruntime.mapping.ArcGISMap
+import com.esri.arcgisruntime.mapping.BasemapStyle
+import com.esri.arcgisruntime.mapping.Viewpoint
+import com.esri.arcgisruntime.mapping.view.Graphic
+import com.esri.arcgisruntime.mapping.view.GraphicsOverlay
+import com.esri.arcgisruntime.symbology.SimpleLineSymbol
+import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol
 import com.example.queerfy.R
 import com.example.queerfy.databinding.ActivityMyAdsBinding
 import com.example.queerfy.model.Property
-import com.example.queerfy.model.User
 import com.example.queerfy.services.Api
 import retrofit2.Call
 import retrofit2.Response
+
 
 class MyAdsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyAdsBinding
@@ -32,6 +40,8 @@ class MyAdsActivity : AppCompatActivity() {
 
         listMyAds()
     }
+
+
 
     fun listMyAds() {
         val preferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
@@ -58,6 +68,8 @@ class MyAdsActivity : AppCompatActivity() {
                         propertyList
                     )
 
+                }else {
+                    Toast(this@MyAdsActivity).showCustomToast("Nenhum Favorito realizado!", this@MyAdsActivity)
                 }
             }
 

@@ -1,5 +1,6 @@
 package com.example.queerfy.view
 
+import android.content.ClipData
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -118,7 +119,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
                         startActivity(loginPage)
                     } else {
                         userPreferences.edit().remove("idUser").apply()
-                        Toast.makeText(this, "Usuario Deslogado!", Toast.LENGTH_SHORT).show()
+                        Toast(this).showCustomToast("Usuario deslogado com sucesso!", this)
                     }
                 }
             }

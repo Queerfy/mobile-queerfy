@@ -5,9 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -73,12 +71,15 @@ class ResidenceListActivity : AppCompatActivity() {
                     if (residenciesList!!.isNotEmpty()) {
                         residenciesList.forEach { property ->
                             if (property.likes!! > 1000) {
+                                findViewById<LinearLayout>(R.id.residence_list_trending_container).visibility =
+                                    View.VISIBLE
+
                                 findViewById<TextView>(R.id.residence_list_trend_title).visibility =
                                     View.VISIBLE
+
                                 findViewById<TextView>(R.id.residence_list_trend_subtitle).visibility =
                                     View.VISIBLE
-                                findViewById<TextView>(R.id.residence_list_trending_container).visibility =
-                                    View.VISIBLE
+
                                 residencesTrendList.add(property)
                             }
 
