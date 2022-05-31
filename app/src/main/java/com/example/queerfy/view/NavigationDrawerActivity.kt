@@ -40,11 +40,8 @@ class NavigationDrawerActivity : AppCompatActivity() {
         userPreferences = getSharedPreferences("userPreferences", MODE_PRIVATE)
 
         setSupportActionBar(this.binding.appBarNavigationDrawer.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        this.binding.appBarNavigationDrawer.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = this.binding.drawerLayout
         val navView: NavigationView = this.binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_navigation_drawer)
@@ -118,14 +115,15 @@ class NavigationDrawerActivity : AppCompatActivity() {
                 }
 
                 R.id.logout_item -> {
-                    if (idUser !== 0) {
-                        userPreferences.edit().remove("idUser").commit()
-
+                    if (idUser == 0) {
+                        startActivity(loginPage)
+                    } else {
+                        userPreferences.edit().remove("idUser").apply()
                         Toast(this).showCustomToast("Usuario deslogado com sucesso!", this)
                     }
-
                 }
             }
+
             false
         }
 
