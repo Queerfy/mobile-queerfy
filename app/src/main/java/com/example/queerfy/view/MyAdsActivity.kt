@@ -1,25 +1,28 @@
 package com.example.queerfy.view
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.queerfy.R
-import com.example.queerfy.databinding.ActivityMyAdsBinding
-import com.example.queerfy.model.Property
-import com.example.queerfy.model.User
-import com.example.queerfy.services.Api
-import retrofit2.Call
-import retrofit2.Response
 import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
+import com.esri.arcgisruntime.geometry.Point
+import com.esri.arcgisruntime.geometry.SpatialReferences
 import com.esri.arcgisruntime.mapping.ArcGISMap
 import com.esri.arcgisruntime.mapping.BasemapStyle
 import com.esri.arcgisruntime.mapping.Viewpoint
-import com.esri.arcgisruntime.mapping.view.MapView
+import com.esri.arcgisruntime.mapping.view.Graphic
+import com.esri.arcgisruntime.mapping.view.GraphicsOverlay
+import com.esri.arcgisruntime.symbology.SimpleLineSymbol
+import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol
+import com.example.queerfy.R
+import com.example.queerfy.databinding.ActivityMyAdsBinding
+import com.example.queerfy.model.Property
+import com.example.queerfy.services.Api
+import retrofit2.Call
+import retrofit2.Response
+
 
 class MyAdsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyAdsBinding
@@ -35,13 +38,7 @@ class MyAdsActivity : AppCompatActivity() {
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.setHasFixedSize(true)
 
-//        ArcGISRuntimeEnvironment.setApiKey("AAPKed018f593bae4100ad82d70ca5dc209982Jf6BtQdYma4z-gv2djY5FxqdrhcLJy98_WGe6SrkApXpxvPWKPWNPuOAbhKn1O")
-//
-//        this.binding.mapView.map = ArcGISMap(BasemapStyle.ARCGIS_TOPOGRAPHIC)
-//
-//        this.binding.mapView.setViewpoint(Viewpoint(-23.507760, -46.436610, 72000.0))
-
-         listMyAds()
+        listMyAds()
     }
 
 
