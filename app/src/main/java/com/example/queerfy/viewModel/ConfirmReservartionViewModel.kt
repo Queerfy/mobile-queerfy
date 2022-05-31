@@ -23,9 +23,12 @@ class ConfirmReservartionViewModel {
 
             postLease.enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    Toast(context).showCustomToast("Reserva completada com sucesso!", context as Activity)
+                    if(response.isSuccessful) {
+                        Toast(context).showCustomToast("Reserva completada com sucesso!", context as Activity)
 
-                    context.startActivity(homePage)
+                        context.startActivity(homePage)
+                    }
+
                 }
 
                 override fun onFailure(call: Call<Void>, t: Throwable) {

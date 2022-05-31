@@ -27,19 +27,11 @@
             android:textSize="40sp"
             android:textStyle="bold" />
 
-<!--        <com.mapbox.mapboxsdk.maps.MapView-->
-<!--            android:id="@+id/mapbox"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            />-->
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/reservationsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:divider="@null"
-            android:dividerHeight="0dp" />
+            android:clipToPadding="false"  />
 
 
     </LinearLayout>

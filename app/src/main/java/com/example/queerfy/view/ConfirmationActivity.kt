@@ -27,7 +27,7 @@ class ConfirmationActivity : AppCompatActivity() {
 
         val idUser = userPreferences.getInt("idUser", 0)
 
-        val idProperty = intent.getStringExtra("idProperty")
+        val idProperty = intent.getIntExtra("idProperty", 0)
         val residenceTitle = intent.getStringExtra("residenceTitle")
         val uf = intent.getStringExtra("uf")
         val residenceDetails = intent.getStringExtra("residenteDetails")
@@ -47,17 +47,12 @@ class ConfirmationActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.confirmation_total_value).text = "R$ ${"%,.2f".format(total)}"
 
         confirmReservartionViewModel.newLeaseModel = NewLeaseModel(
-            idProperty = idProperty?.toInt(),
+            idProperty = idProperty,
             idUser = idUser,
             checkIn = datachekin,
             checkOut = datachekout,
             totalValue = total
         )
-
-        println(datachekin)
-        println(datachekout)
-        println(total)
-
 
     }
 
