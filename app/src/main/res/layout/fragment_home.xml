@@ -226,21 +226,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgWindow" />
 
-            <ImageView
-                android:id="@+id/imgMap"
+            <LinearLayout
+                android:id="@+id/container_map"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/map_description"
-                android:padding="10dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/img_map"
-                app:layout_constraintTop_toBottomOf="@+id/txtPlacesToRent" />
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPlacesToRent"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                >
+
+                <com.esri.arcgisruntime.mapping.view.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="350dp"
+                    android:layout_height="450dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
 
             <com.example.queerfy.utils.Footer
                 android:id="@+id/footer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/imgMap" />
+                app:layout_constraintTop_toBottomOf="@+id/container_map" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

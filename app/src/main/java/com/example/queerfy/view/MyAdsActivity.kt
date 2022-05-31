@@ -6,16 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.esri.arcgisruntime.ArcGISRuntimeEnvironment
-import com.esri.arcgisruntime.geometry.Point
-import com.esri.arcgisruntime.geometry.SpatialReferences
-import com.esri.arcgisruntime.mapping.ArcGISMap
-import com.esri.arcgisruntime.mapping.BasemapStyle
-import com.esri.arcgisruntime.mapping.Viewpoint
-import com.esri.arcgisruntime.mapping.view.Graphic
-import com.esri.arcgisruntime.mapping.view.GraphicsOverlay
-import com.esri.arcgisruntime.symbology.SimpleLineSymbol
-import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol
 import com.example.queerfy.R
 import com.example.queerfy.databinding.ActivityMyAdsBinding
 import com.example.queerfy.model.Property
