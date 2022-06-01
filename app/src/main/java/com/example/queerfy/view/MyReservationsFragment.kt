@@ -1,8 +1,6 @@
 package com.example.queerfy.view
 
 import android.content.Intent
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,15 +30,15 @@ class MyReservationsFragment(
         return ReservationsAdsViewHolder(view)
     }
 
-    class ReservationsAdsViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class ReservationsAdsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     }
 
     fun getPropertyType(typeProperty: String?): String {
-        if(typeProperty == "casa") {
-            return "Casa"
-        }else {
-            return "Apartamento"
+        return if (typeProperty == "casa") {
+            "Casa"
+        } else {
+            "Apartamento"
         }
     }
 
@@ -51,49 +49,54 @@ class MyReservationsFragment(
 
         val residencePage = Intent(holder.itemView.context, ResidenceActivity::class.java)
 
-        getProperty.enqueue(object: Callback<Property> {
+        getProperty.enqueue(object : Callback<Property> {
             override fun onResponse(call: Call<Property>, response: Response<Property>) {
-
-                if(response.isSuccessful) {
-
-                    val descResidence = "${getPropertyType(response.body()?.propertyType)} - ${response.body()?.roomQuantity} quarto(s) disponivel"
+                if (response.isSuccessful) {
+                    val descResidence =
+                        "${getPropertyType(response.body()?.propertyType)} - ${response.body()?.roomQuantity} quarto(s) disponivel"
 
                     val idOwner = response.body()?.idUser as Int
 
-                    holder.itemView.findViewById<TextView>(R.id.desc_reservation).text = descResidence
+                    holder.itemView.findViewById<TextView>(R.id.desc_reservation).text =
+                        descResidence
 
-                    holder.itemView.findViewById<AppCompatButton>(R.id.btn_residence_view).setOnClickListener{
-                        residencePage.putExtra("idHouse", response.body()?.id)
+                    holder.itemView.findViewById<AppCompatButton>(R.id.btn_residence_view)
+                        .setOnClickListener {
+                            residencePage.putExtra("idHouse", response.body()?.id)
 
-                        holder.itemView.context.startActivity(residencePage)
-                    }
+                            holder.itemView.context.startActivity(residencePage)
+                        }
 
                     val getOwner = Api.create().getUser(idOwner)
 
-                    getOwner.enqueue(object: Callback<User> {
+                    getOwner.enqueue(object : Callback<User> {
                         override fun onResponse(call: Call<User>, response: Response<User>) {
                             if (response.isSuccessful) {
-
                                 val nameOwner = response.body()?.name
 
-                                holder.itemView.findViewById<TextView>(R.id.owner_reservation).text = "Locador(a): ${nameOwner}"
+                                holder.itemView.findViewById<TextView>(R.id.owner_reservation).text =
+                                    "Locadore: ${nameOwner}"
                             }
                         }
 
                         override fun onFailure(call: Call<User>, t: Throwable) {
-                            Toast.makeText(holder.itemView.context, "Erro ao caregar as informações do locador!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                holder.itemView.context,
+                                "Erro ao caregar as informações do locador!",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
-
                     })
-
                 }
-
             }
 
             override fun onFailure(call: Call<Property>, t: Throwable) {
-                Toast.makeText(holder.itemView.context, "Erro ao caregar as informações!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    holder.itemView.context,
+                    "Erro ao caregar as informações!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-
         })
     }
 
