@@ -30,10 +30,18 @@ class ResidenceFragment(
 
     }
 
+    fun getPropertyType(typeProperty: String?): String {
+        if(typeProperty == "casa") {
+            return "Casa"
+        }else {
+            return "Apartamento"
+        }
+    }
+
     override fun onBindViewHolder(holder: ResidenceViewHolder, position: Int) {
         val property = properties[position]
 
-        val descResidence = "${property.propertyType} - ${property.roomQuantity} quarto(s) disponivel"
+        val descResidence = "${getPropertyType(property.propertyType)} - ${property.roomQuantity} quarto(s) disponivel"
         val priceProperty = "R$ ${property.dailyPrice?.toInt()} / noite"
 
         holder.itemView.findViewById<TextView>(R.id.desc_residence).text = descResidence

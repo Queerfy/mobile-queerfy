@@ -39,6 +39,14 @@ class MyFavoritesFragment(
 
     }
 
+    fun getPropertyType(typeProperty: String?): String {
+        if(typeProperty == "casa") {
+            return "Casa"
+        }else {
+            return "Apartamento"
+        }
+    }
+
     override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
         val myFavorite = myFavorites[position]
 
@@ -51,7 +59,7 @@ class MyFavoritesFragment(
             ) {
 
                 if (response.isSuccessful) {
-                    val descAd = "${response.body()?.propertyType} - ${response.body()?.roomQuantity} quarto(s) disponivel"
+                    val descAd = "${getPropertyType(response.body()?.propertyType)} - ${response.body()?.roomQuantity} quarto(s) disponivel"
                     holder.itemView.findViewById<TextView>(R.id.property_name).text = descAd
 
                     val idOwner = response.body()?.idUser as Int

@@ -36,6 +36,14 @@ class MyReservationsFragment(
 
     }
 
+    fun getPropertyType(typeProperty: String?): String {
+        if(typeProperty == "casa") {
+            return "Casa"
+        }else {
+            return "Apartamento"
+        }
+    }
+
     override fun onBindViewHolder(holder: ReservationsAdsViewHolder, position: Int) {
         val myReservation = myReservations[position]
 
@@ -48,7 +56,7 @@ class MyReservationsFragment(
 
                 if(response.isSuccessful) {
 
-                    val descResidence = "${response.body()?.propertyType} - ${response.body()?.roomQuantity} quarto(s) disponivel"
+                    val descResidence = "${getPropertyType(response.body()?.propertyType)} - ${response.body()?.roomQuantity} quarto(s) disponivel"
 
                     val idOwner = response.body()?.idUser as Int
 

@@ -8,7 +8,7 @@ data class ToPlanRegisterModel(
     val name: String,
     val birthDate: String,
     val sexOrientation: SexOrientationEnum,
-    val genderIdentity: GenderIdentityEnum,
+    val genderIdentity: String,
     val rg: String,
     val cpf: String,
     val email: String,

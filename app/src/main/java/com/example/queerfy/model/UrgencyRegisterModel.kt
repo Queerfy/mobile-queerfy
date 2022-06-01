@@ -6,7 +6,7 @@ import com.example.queerfy.utils.SexOrientationEnum
 data class UrgencyRegisterModel(
     val name: String,
     val sexOrientation: SexOrientationEnum,
-    val genre: GenderIdentityEnum,
+    val genre: String,
     val cpf: String,
     val email: String,
     val phone: String,

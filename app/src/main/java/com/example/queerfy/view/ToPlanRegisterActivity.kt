@@ -156,7 +156,7 @@ class ToPlanRegisterActivity : AppCompatActivity() {
                     .replace(" ", "")
                     .trim(),
                 sexOrientation = toPlanRegisterViewModel.sexOrientationEnum,
-                genderIdentity = toPlanRegisterViewModel.genderIdentityEnum,
+                genderIdentity = toPlanRegisterViewModel.genderIdentityEnum.genderIdentityName,
                 cpf = this.binding.edtCpf.text.toString()
                     .replace(".", "")
                     .replace("-", "")

@@ -37,10 +37,18 @@ class MyAdsFragment(
 
     }
 
+    private fun getPropertyType(typeProperty: String?): String {
+        if(typeProperty == "casa") {
+            return "Casa"
+        }else {
+            return "Apartamento"
+        }
+    }
+
     override fun onBindViewHolder(holder: AdsViewHolder, position: Int) {
         val myAd = myAds[position]
 
-        val descAd = "${myAd.propertyType} - ${myAd.roomQuantity} quarto(s) disponivel"
+        val descAd = "${this.getPropertyType(myAd.propertyType)} - ${myAd.roomQuantity} quarto(s) disponivel"
 
         val idOwner = myAd.idUser as Int
 

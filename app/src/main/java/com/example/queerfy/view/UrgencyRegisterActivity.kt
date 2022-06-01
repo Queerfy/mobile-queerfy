@@ -141,7 +141,7 @@ class UrgencyRegisterActivity : AppCompatActivity() {
             UrgencyRegisterModel(
                 name = this.binding.edtName.text.toString(),
                 sexOrientation = urgencyRegisterViewModel.sexOrientationEnum,
-                genre = urgencyRegisterViewModel.genderIdentityEnum,
+                genre = urgencyRegisterViewModel.genderIdentityEnum.genderIdentityName,
                 cpf = this.binding.edtCpf.text.toString()
                     .replace(".", "")
                     .replace("-", "")

@@ -26,7 +26,6 @@ class UrgencyRegisterViewModel {
 
             postUrgency.enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    println(response)
                     if (response.isSuccessful) {
                         Toast(context).showCustomToast(
                             "Usuario cadastrado com sucesso!",

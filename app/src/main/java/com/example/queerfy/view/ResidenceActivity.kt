@@ -103,6 +103,14 @@ class ResidenceActivity : AppCompatActivity() {
         transaction.commit()
     }
 
+    fun getPropertyType(typeProperty: String?): String {
+        if(typeProperty == "casa") {
+            return "Casa"
+        }else {
+            return "Apartamento"
+        }
+    }
+
     fun getHouse() {
         val confirmationActivity = Intent(this@ResidenceActivity, ConfirmationActivity::class.java)
 
@@ -139,7 +147,7 @@ class ResidenceActivity : AppCompatActivity() {
                     val haveGarage = response.body()?.haveGarage
                     val haveAnimals = response.body()?.haveAnimals
 
-                    val residenceTitle = "${propertyType} - ${roomQuantity} quarto(s) disponiveis"
+                    val residenceTitle = "${getPropertyType(propertyType)} - ${roomQuantity} quarto(s) disponiveis"
                     val residenteDetails = "${guestsQuantity} hóspedes - ${roomQuantity} quarto - ${bedsQuantity} camas - ${bathroomQuantity} banheiro"
 
                     findViewById<TextView>(R.id.residence_title).text = residenceTitle
