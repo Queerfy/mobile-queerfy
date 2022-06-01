@@ -90,7 +90,7 @@ class MyAdsFragment(
 
                     val nameOwner = response.body()?.name
 
-                    holder.itemView.findViewById<TextView>(R.id.locator_ad).text = "Locador(a): ${nameOwner}"
+                    holder.itemView.findViewById<TextView>(R.id.locator_ad).text = "Locadore: ${nameOwner}"
                 }
             }
 
