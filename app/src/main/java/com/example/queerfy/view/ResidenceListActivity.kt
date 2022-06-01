@@ -41,7 +41,7 @@ class ResidenceListActivity : AppCompatActivity() {
             "Locações com as melhores avaliações em $cityNotFormated"
 
         recyclerViewTrendOne = findViewById(R.id.trend_residences_list)
-        recyclerViewTrendOne.layoutManager = LinearLayoutManager(baseContext)
+        recyclerViewTrendOne.layoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.HORIZONTAL, false)
         recyclerViewTrendOne.itemAnimator = DefaultItemAnimator()
         recyclerViewTrendOne.setHasFixedSize(true)
 
