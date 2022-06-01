@@ -100,7 +100,7 @@ class MyFavoritesFragment(
 
                                 val nameOwner = response.body()?.name
 
-                                holder.itemView.findViewById<TextView>(R.id.user_name).text = "Locador(a): ${nameOwner}"
+                                holder.itemView.findViewById<TextView>(R.id.user_name).text = "Locadore: ${nameOwner}"
                             }
                         }
 
