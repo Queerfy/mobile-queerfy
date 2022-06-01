@@ -74,12 +74,15 @@ class HomeFragment : Fragment() {
 
                 if (response.isSuccessful) {
                     response.body()?.forEach { item ->
-                        val point = Point(item.longitude.toString().toDouble(), item.latitude.toString().toDouble(), SpatialReferences.getWgs84())
+                        if (!item.longitude.isNullOrEmpty() && !item.latitude.isNullOrEmpty()) {
+                            val point = Point(item.longitude.toString().toDouble(), item.latitude.toString().toDouble(), SpatialReferences.getWgs84())
 
-                        val simpleMarkerSymbol = SimpleMarkerSymbol(SimpleMarkerSymbol.Style.X, -0xa8cd, 12f)
+                            val simpleMarkerSymbol = SimpleMarkerSymbol(SimpleMarkerSymbol.Style.X, -0xa8cd, 12f)
 
-                        val pointGraphic = Graphic(point, simpleMarkerSymbol)
-                        graphicsOverlay.graphics.add(pointGraphic)
+                            val pointGraphic = Graphic(point, simpleMarkerSymbol)
+                            graphicsOverlay.graphics.add(pointGraphic)
+                        }
+
 
                     }
 
